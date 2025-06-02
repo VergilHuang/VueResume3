@@ -1,0 +1,21 @@
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .2s linear;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active 在低于版本 2.1.8 中 */ {
+  opacity: 0;
+}
+
+.fade-leave, .fade-enter-to{
+	opacity: 1;
+}
+
+.slowfade-enter-active, .slowfade-leave-active {
+  transition: opacity 1.2s ease-in-out;
+}
+.slowfade-enter, .slowfade-leave-to /* .slowfade-leave-active 在低于版本 2.1.8 中 */ {
+  opacity: 0;
+}
+
+.slowfade-leave, .slowfade-enter-to{
+	opacity: 1;
+}
