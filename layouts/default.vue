@@ -8,9 +8,9 @@
       <div class="content">
         <NavigationBar />
         <div id="nav" class="dynamic-content box-border shadower">
-          <transition name="fade" mode="out-in">
+          <Transition name="fade" mode="out-in">
             <slot />
-          </transition>
+          </Transition>
         </div>
       </div>
       <LoadingIndicator />

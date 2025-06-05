@@ -1,7 +1,13 @@
 <script setup>
-const router = useRouter();
-
-router.replace("/about");
+definePageMeta({
+  middleware: [
+    function (to) {
+      if (to.path === "/") {
+        return navigateTo("/about");
+      }
+    },
+  ],
+});
 </script>
 
 <template>

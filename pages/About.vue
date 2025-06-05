@@ -28,139 +28,146 @@ const services_data = ref([
   },
 ]);
 
-const skills_data = ref([
-  {
-    id: 1,
-    cate_name: "Front-end",
-    skills: [
-      { id: 1, title: "Javascript", percentage: 96 },
-      { id: 2, title: "HTML5", percentage: 88 },
-      { id: 3, title: "CSS", percentage: 96 },
-    ],
-  },
-  {
-    id: 2,
-    cate_name: "Front-end Framework",
-    skills: [
-      { id: 1, title: "React(Hooks)", percentage: 96 },
-      { id: 2, title: "Vue", percentage: 92 },
-      { id: 3, title: "Angular", percentage: 64 },
-    ],
-  },
-  {
-    id: 6,
-    cate_name: "UI Library",
-    skills: [
-      { id: 1, title: "Bootstrap3", percentage: 83 },
-      { id: 2, title: "W3CSS", percentage: 80 },
-      { id: 3, title: "Ant Design", percentage: 88 },
-      { id: 4, title: "Element UI", percentage: 84 },
-      { id: 5, title: "Vant UI", percentage: 90 },
-    ],
-  },
-  {
-    id: 7,
-    cate_name: "Animation Library",
-    skills: [
-      { id: 1, title: "Anime JS", percentage: 70 },
-      { id: 2, title: "Animate CSS", percentage: 60 },
-    ],
-  },
-  {
-    id: 3,
-    cate_name: "Mobile Phone",
-    skills: [
-      { id: 1, title: "Objective-C", percentage: 70 },
-      { id: 2, title: "Java", percentage: 62 },
-    ],
-  },
-  {
-    id: 4,
-    cate_name: "Version Control",
-    skills: [
-      { id: 1, title: "Git", percentage: 84 },
-      { id: 2, title: "SVN", percentage: 58 },
-    ],
-  },
-  {
-    id: 5,
-    cate_name: "Back-end",
-    skills: [
-      { id: 1, title: "Java", percentage: 62 },
-      { id: 2, title: "Express", percentage: 76 },
-      { id: 3, title: "Koa", percentage: 0 },
-    ],
-  },
-]);
+// const skills_data = ref([
+//   {
+//     id: 1,
+//     cate_name: "Front-end",
+//     skills: [
+//       { id: 1, title: "Javascript", percentage: 96 },
+//       { id: 2, title: "HTML5", percentage: 88 },
+//       { id: 3, title: "CSS", percentage: 96 },
+//     ],
+//   },
+//   {
+//     id: 2,
+//     cate_name: "Front-end Framework",
+//     skills: [
+//       { id: 1, title: "React(Hooks)", percentage: 96 },
+//       { id: 2, title: "Vue", percentage: 92 },
+//       { id: 3, title: "Angular", percentage: 64 },
+//     ],
+//   },
+//   {
+//     id: 6,
+//     cate_name: "UI Library",
+//     skills: [
+//       { id: 1, title: "Bootstrap3", percentage: 83 },
+//       { id: 2, title: "W3CSS", percentage: 80 },
+//       { id: 3, title: "Ant Design", percentage: 88 },
+//       { id: 4, title: "Element UI", percentage: 84 },
+//       { id: 5, title: "Vant UI", percentage: 90 },
+//     ],
+//   },
+//   {
+//     id: 7,
+//     cate_name: "Animation Library",
+//     skills: [
+//       { id: 1, title: "Anime JS", percentage: 70 },
+//       { id: 2, title: "Animate CSS", percentage: 60 },
+//     ],
+//   },
+//   {
+//     id: 3,
+//     cate_name: "Mobile Phone",
+//     skills: [
+//       { id: 1, title: "Objective-C", percentage: 70 },
+//       { id: 2, title: "Java", percentage: 62 },
+//     ],
+//   },
+//   {
+//     id: 4,
+//     cate_name: "Version Control",
+//     skills: [
+//       { id: 1, title: "Git", percentage: 84 },
+//       { id: 2, title: "SVN", percentage: 58 },
+//     ],
+//   },
+//   {
+//     id: 5,
+//     cate_name: "Back-end",
+//     skills: [
+//       { id: 1, title: "Java", percentage: 62 },
+//       { id: 2, title: "Express", percentage: 76 },
+//       { id: 3, title: "Koa", percentage: 0 },
+//     ],
+//   },
+// ]);
 
 const skills_data2 = [
   {
     id: 1,
     cate_name: "Front-end Core",
     skills: [
-      { id: 1, title: "JavaScript (ES6+)", percentage: 96 },
-      { id: 2, title: "TypeScript", percentage: 92 },
-      { id: 3, title: "HTML5 / CSS3", percentage: 94 },
-      { id: 4, title: "Flexbox / Grid", percentage: 90 },
+      { id: 1, title: "JavaScript (ES6+)", percentage: 96, level: "expert" },
+      { id: 2, title: "TypeScript", percentage: 68, level: "experienced" },
+      { id: 3, title: "HTML5 / CSS3", percentage: 94, level: "expert" },
+      { id: 4, title: "Flexbox / Grid", percentage: 90, level: "expert" },
+      { id: 5, title: "Responsive Design", percentage: 88, level: "expert" },
+      { id: 6, title: "PWA", percentage: 88, level: "expert" },
     ],
   },
   {
     id: 2,
     cate_name: "Framework & Build Tool",
     skills: [
-      { id: 1, title: "Vue 2 / 3", percentage: 96 },
-      { id: 2, title: "React (Hooks)", percentage: 88 },
-      { id: 3, title: "Nuxt", percentage: 86 },
-      { id: 4, title: "Vite", percentage: 92 },
-      { id: 5, title: "Webpack", percentage: 85 },
-      { id: 6, title: "Module Federation", percentage: 78 },
+      { id: 1, title: "Vue 2 / 3", percentage: 96, level: "expert" },
+      { id: 2, title: "React (Hooks)", percentage: 65, level: "experienced" },
+      { id: 3, title: "Nuxt", percentage: 86, level: "expert" },
+      { id: 4, title: "Vite", percentage: 92, level: "expert" },
+      { id: 5, title: "Webpack", percentage: 65, level: "experienced" },
+      { id: 6, title: "Module Federation", percentage: 28, level: "basic" },
     ],
   },
   {
     id: 3,
     cate_name: "State Management",
     skills: [
-      { id: 1, title: "Pinia", percentage: 90 },
-      { id: 2, title: "Vuex", percentage: 92 },
-      { id: 3, title: "Zustand", percentage: 70 },
+      { id: 1, title: "Pinia", percentage: 90, level: "expert" },
+      { id: 2, title: "Vuex", percentage: 92, level: "expert" },
+      { id: 3, title: "Zustand", percentage: 70, level: "experienced" },
     ],
   },
   {
     id: 4,
     cate_name: "UI & Style",
     skills: [
-      { id: 1, title: "Tailwind CSS", percentage: 94 },
-      { id: 2, title: "Element UI", percentage: 88 },
-      { id: 3, title: "Ant Design", percentage: 88 },
-      { id: 4, title: "Vant UI", percentage: 90 },
-      { id: 5, title: "Material UI", percentage: 76 },
-      { id: 6, title: "Storybook", percentage: 84 },
+      { id: 1, title: "Tailwind CSS", percentage: 94, level: "expert" },
+      { id: 2, title: "Element UI", percentage: 88, level: "expert" },
+      { id: 3, title: "Ant Design", percentage: 88, level: "expert" },
+      { id: 4, title: "Vant UI", percentage: 90, level: "expert" },
+      { id: 5, title: "Material UI", percentage: 76, level: "experienced" },
+      { id: 6, title: "Storybook", percentage: 70, level: "experienced" },
     ],
   },
   {
     id: 5,
     cate_name: "Developer Tools & Quality",
     skills: [
-      { id: 1, title: "Git", percentage: 92 },
-      { id: 2, title: "GitLab CI", percentage: 86 },
-      { id: 3, title: "ESLint / Prettier / Husky", percentage: 94 },
+      { id: 1, title: "Git", percentage: 92, level: "expert" },
+      { id: 2, title: "GitLab CI", percentage: 78, level: "experienced" },
+      {
+        id: 3,
+        title: "ESLint / Prettier / Husky",
+        percentage: 90,
+        level: "expert",
+      },
     ],
   },
   {
     id: 6,
     cate_name: "Backend & Communication",
     skills: [
-      { id: 1, title: "RESTful API", percentage: 92 },
-      { id: 2, title: "WebSocket", percentage: 86 },
-      { id: 3, title: "Firebase", percentage: 76 },
+      { id: 1, title: "RESTful API", percentage: 92, level: "expert" },
+      { id: 2, title: "WebSocket", percentage: 86, level: "expert" },
+      { id: 3, title: "Firebase", percentage: 81, level: "experienced" },
     ],
   },
   {
     id: 7,
     cate_name: "Design Collaboration",
     skills: [
-      { id: 1, title: "Figma", percentage: 90 },
-      { id: 2, title: "Zeplin", percentage: 80 },
+      { id: 1, title: "Figma", percentage: 80, level: "experienced" },
+      { id: 2, title: "Zeplin", percentage: 80, level: "experienced" },
     ],
   },
 ];
@@ -181,42 +188,6 @@ const about_text = [
       <p v-for="(text, idx) in about_text" :key="idx" class="about-text">
         {{ text }}
       </p>
-      <!-- <p class="about-text">嗨，我是Vergil。</p>
-      <p class="about-text">
-        技術領域的
-        <b>挑戰者</b
-        >，擁抱未知並保持謙遜。喜歡與人分享知識，抱持強烈的好奇心與樂觀態度。
-      </p>
-      <p class="about-text">
-        平台建置經驗豐富，擅長從零開始建置專案，並可以在不同方案內 Trade-off.
-      </p>
-      <p class="about-text">
-        重構專案經驗豐富；致力於在合理時空範圍下對 Lagcy Code 做優化或重寫。
-      </p>
-      <p class="about-text">
-        精通 Vue/React
-        與Typescript。個人認為，Typescript是優秀專案的基石，在優秀的專案中都是覺得不可或缺的。
-      </p>
-      <p class="about-text">高度的責任感 - 君以國士待我 我必國士報之。</p> -->
-      <!-- <ol class="list-wrapepr">
-        <li class="about-text">
-          使用
-          <b>Webpack</b>優化專案架構。
-        </li>
-        <li class="about-text">
-          建立團隊程式規範，使用
-          <b>ESLint</b> 約束編寫習慣，引入
-          <b>Typescript</b> 進行介面靜態定義與檢查。提升團隊整體開發體驗與效率。
-        </li>
-        <li class="about-text">程式結構盡可能遵守 SOLID 原則，降低因需求變更而需要大量修改的風險。</li>
-        <li
-          class="about-text"
-        >透過 Tech Talk 和 Daily Traning ，提升團隊產出的 Code Quality，增加專案可維護性與可擴充性，甚至增進團隊的活力。</li>
-        <li
-          class="about-text"
-        >結構化SASS/SCSS規劃:除了使用NormalizeCSS or ResetCSS定義網站HTML一致性樣式外，結合預處理功能運用Programmable特性寫出高動態好維護的樣式表結構，杜絕樣式衝突。</li>
-        <li class="about-text">More...</li>
-      </ol>-->
     </section>
     <section>
       <h1>My Service</h1>
@@ -301,6 +272,9 @@ const about_text = [
         position: relative;
         left: calc(100% + 8px);
         bottom: 16px;
+        font-weight: 500;
+        text-transform: capitalize;
+        color: #555;
       }
     }
 
