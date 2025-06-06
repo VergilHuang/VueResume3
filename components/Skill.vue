@@ -1,8 +1,11 @@
 <template>
   <div>
     <h6 class="subject">{{ skill.title }}</h6>
-    <div :data-percentage="skill.level" class="percentage">
-      <div class="skill-percen" :style="'width:' + percentage + '%;'"></div>
+    <div class="skill-box">
+      <div class="percentage">
+        <div class="skill-percen" :style="'width:' + percentage + '%;'"></div>
+      </div>
+      <span class="skill-level">{{ skill.level }}</span>
     </div>
   </div>
 </template>

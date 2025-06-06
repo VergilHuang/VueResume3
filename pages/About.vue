@@ -28,72 +28,7 @@ const services_data = ref([
   },
 ]);
 
-// const skills_data = ref([
-//   {
-//     id: 1,
-//     cate_name: "Front-end",
-//     skills: [
-//       { id: 1, title: "Javascript", percentage: 96 },
-//       { id: 2, title: "HTML5", percentage: 88 },
-//       { id: 3, title: "CSS", percentage: 96 },
-//     ],
-//   },
-//   {
-//     id: 2,
-//     cate_name: "Front-end Framework",
-//     skills: [
-//       { id: 1, title: "React(Hooks)", percentage: 96 },
-//       { id: 2, title: "Vue", percentage: 92 },
-//       { id: 3, title: "Angular", percentage: 64 },
-//     ],
-//   },
-//   {
-//     id: 6,
-//     cate_name: "UI Library",
-//     skills: [
-//       { id: 1, title: "Bootstrap3", percentage: 83 },
-//       { id: 2, title: "W3CSS", percentage: 80 },
-//       { id: 3, title: "Ant Design", percentage: 88 },
-//       { id: 4, title: "Element UI", percentage: 84 },
-//       { id: 5, title: "Vant UI", percentage: 90 },
-//     ],
-//   },
-//   {
-//     id: 7,
-//     cate_name: "Animation Library",
-//     skills: [
-//       { id: 1, title: "Anime JS", percentage: 70 },
-//       { id: 2, title: "Animate CSS", percentage: 60 },
-//     ],
-//   },
-//   {
-//     id: 3,
-//     cate_name: "Mobile Phone",
-//     skills: [
-//       { id: 1, title: "Objective-C", percentage: 70 },
-//       { id: 2, title: "Java", percentage: 62 },
-//     ],
-//   },
-//   {
-//     id: 4,
-//     cate_name: "Version Control",
-//     skills: [
-//       { id: 1, title: "Git", percentage: 84 },
-//       { id: 2, title: "SVN", percentage: 58 },
-//     ],
-//   },
-//   {
-//     id: 5,
-//     cate_name: "Back-end",
-//     skills: [
-//       { id: 1, title: "Java", percentage: 62 },
-//       { id: 2, title: "Express", percentage: 76 },
-//       { id: 3, title: "Koa", percentage: 0 },
-//     ],
-//   },
-// ]);
-
-const skills_data2 = [
+const skills_data = [
   {
     id: 1,
     cate_name: "Front-end Core",
@@ -201,9 +136,10 @@ const about_text = [
     </section>
     <section>
       <h1>My Skills</h1>
+      <SkillRadar :skills-data="skills_data" />
       <div>
         <SkillBox
-          v-for="skill_bd in skills_data2"
+          v-for="skill_bd in skills_data"
           :key="skill_bd.id"
           :catename="skill_bd.cate_name"
           :skills="skill_bd.skills"
@@ -254,24 +190,40 @@ const about_text = [
       vertical-align: top;
       display: inline-block;
       width: 22%;
-      margin: 12px 47px;
+      margin: 12px 40px 30px;
     }
 
-    .percentage {
-      width: 100%;
-      height: 6px;
-      background: #d8d8d8;
+    .skill-box {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: nowrap;
+      gap: 10px;
 
-      .skill-percen {
-        height: 100%;
-        background: #5069c3;
+      .percentage {
+        width: 78%;
+        height: 6px;
+        background: #d8d8d8;
+        flex: none;
+
+        .skill-percen {
+          height: 100%;
+          background: #5069c3;
+        }
+
+        // &::after {
+        //   content: attr(data-percentage);
+        //   position: relative;
+        //   left: calc(100% + 8px);
+        //   bottom: 16px;
+        //   font-weight: 500;
+        //   text-transform: capitalize;
+        //   color: #555;
+        // }
       }
-
-      &::after {
-        content: attr(data-percentage);
-        position: relative;
-        left: calc(100% + 8px);
-        bottom: 16px;
+      .skill-level {
+        flex: 1;
+        white-space: nowrap;
         font-weight: 500;
         text-transform: capitalize;
         color: #555;
