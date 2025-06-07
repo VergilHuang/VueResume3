@@ -24,7 +24,7 @@ const switchLanguage = (lang) => {
 <template>
   <div class="language-switcher">
     <button class="language-button" @click="toggleDropdown">
-      <Icon name="material-icon-theme:i18n" size="28px"></Icon>
+      <Icon name="material-icon-theme:i18n" size="24px"></Icon>
       <!-- <span class="name">{{ currentLanguage.name }}</span> -->
     </button>
 

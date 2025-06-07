@@ -1,7 +1,6 @@
 <script setup>
-import { ref, onMounted, onBeforeUnmount, useI18n } from "#imports";
+import { ref, onMounted, onBeforeUnmount } from "#imports";
 import animateScrollTo from "animated-scroll-to";
-const { locales, setLocale } = useI18n();
 
 const desktopSize = ref(0);
 const menu_opened = ref(false);
@@ -51,15 +50,11 @@ onBeforeUnmount(() => {
 
 const menu_items = [
   {
-    name: "About",
-    to: "/about",
-  },
-  {
-    name: "Resume",
+    name: "resume",
     to: "/resume",
   },
   {
-    name: "Contact",
+    name: "contact",
     to: "/contact",
   },
 ];
@@ -70,7 +65,7 @@ const menu_items = [
     <nav id="navigationBar" class="nav box-border shadower">
       <div id="nav" class="nav-container">
         <div class="nav-left">
-          <NuxtLink class="home-btn" to="/">
+          <NuxtLink class="home-btn" :to="$localePath('/about')">
             <Icon name="healthicons:home-alt" size="30px" />
           </NuxtLink>
           <template v-if="desktopSize > 680">
@@ -78,10 +73,10 @@ const menu_items = [
               v-for="item in menu_items"
               :key="item.name"
               class="router-link"
-              :to="item.to"
+              :to="$localePath(item.to)"
               @click="beActive"
             >
-              {{ item.name }}
+              {{ $t(item.name) }}
             </NuxtLink>
           </template>
         </div>
@@ -97,10 +92,10 @@ const menu_items = [
           <a
             class="hire-btn"
             href="mailto:zaq9716643@gmail.com"
-            title="Hire me"
+            :title="$t('hire_me')"
           >
             <div class="hire-ract">
-              Hire Me
+              <span class="hire-text">{{ $t("hire_me") }}</span>
               <div class="fly-icon">
                 <Icon name="akar-icons:paper-airplane" size="16px" />
               </div>
@@ -122,7 +117,7 @@ const menu_items = [
           :to="item.to"
           @click="beActive"
         >
-          {{ item.name }}
+          {{ $t(item.name) }}
         </NuxtLink>
       </div>
     </div>
