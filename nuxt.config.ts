@@ -9,16 +9,19 @@ export default defineNuxtConfig({
     "@nuxt/eslint",
     "@nuxt/fonts",
     "@nuxt/icon",
-    "@nuxt/image",
     // "@nuxt/ui",
+    "@nuxt/image",
+    "@nuxtjs/i18n",
+    "nuxt-svgo",
   ],
-
-  // css: ["~/assets/style/main.css"],
 
   image: {},
 
-  // alias: {
-  //   "@/": path.resolve(__dirname, "./"),
-  //   "~/": path.resolve(__dirname, "./"),
-  // },
+  i18n: {
+    locales: [
+      { code: "en", name: "English", file: "en.json" },
+      { code: "zh-TW", name: "中文", file: "zh-TW.json" },
+    ],
+    defaultLocale: "en",
+  },
 });

@@ -1,0 +1,54 @@
+<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="16" cy="16" r="16" fill="#FE0000"/>
+  <clipPath id="clip-circle">
+    <circle cx="16" cy="16" r="16"/>
+  </clipPath>
+  <g clip-path="url(#clip-circle)">
+    <!-- 藍底區 -->
+    <rect x="0" y="0" width="16" height="12" fill="#000095"/>
+    <!-- 白日 -->
+    <g transform="translate(8,6)">
+      <circle r="3.2" fill="white"/>
+      <!-- 12光芒 -->
+      <g fill="white">
+        <!-- 放射狀12道光芒 -->
+        <g transform="rotate(0)">
+          <path d="M0,-5 L0.6,-1.2 L-0.6,-1.2 Z"/>
+        </g>
+        <g transform="rotate(30)">
+          <path d="M0,-5 L0.6,-1.2 L-0.6,-1.2 Z"/>
+        </g>
+        <g transform="rotate(60)">
+          <path d="M0,-5 L0.6,-1.2 L-0.6,-1.2 Z"/>
+        </g>
+        <g transform="rotate(90)">
+          <path d="M0,-5 L0.6,-1.2 L-0.6,-1.2 Z"/>
+        </g>
+        <g transform="rotate(120)">
+          <path d="M0,-5 L0.6,-1.2 L-0.6,-1.2 Z"/>
+        </g>
+        <g transform="rotate(150)">
+          <path d="M0,-5 L0.6,-1.2 L-0.6,-1.2 Z"/>
+        </g>
+        <g transform="rotate(180)">
+          <path d="M0,-5 L0.6,-1.2 L-0.6,-1.2 Z"/>
+        </g>
+        <g transform="rotate(210)">
+          <path d="M0,-5 L0.6,-1.2 L-0.6,-1.2 Z"/>
+        </g>
+        <g transform="rotate(240)">
+          <path d="M0,-5 L0.6,-1.2 L-0.6,-1.2 Z"/>
+        </g>
+        <g transform="rotate(270)">
+          <path d="M0,-5 L0.6,-1.2 L-0.6,-1.2 Z"/>
+        </g>
+        <g transform="rotate(300)">
+          <path d="M0,-5 L0.6,-1.2 L-0.6,-1.2 Z"/>
+        </g>
+        <g transform="rotate(330)">
+          <path d="M0,-5 L0.6,-1.2 L-0.6,-1.2 Z"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -28,7 +28,9 @@ let chart = null;
 const initChart = () => {
   if (!chartRef.value) return;
 
-  chart = echarts.init(chartRef.value);
+  chart = echarts.init(chartRef.value, null, {
+    height: "580px",
+  });
 
   const categories = props.skillsData.map((category) => category.cate_name);
   const series = props.skillsData.map((category) => {
@@ -39,10 +41,12 @@ const initChart = () => {
     return avgValue;
   });
 
+  const radius = window.screen.availWidth > 1170 ? "60%" : "50%";
   const option = {
     title: {
       // text: "Skills Radar Chart",
       text: "Competency Spider Chart",
+      top: "10%",
       left: "center",
     },
     tooltip: {
@@ -53,6 +57,8 @@ const initChart = () => {
         name,
         max: 100,
       })),
+      center: ["50%", "60%"],
+      radius: radius,
       splitNumber: 4,
       axisName: {
         color: "#333",
@@ -86,9 +92,21 @@ const initChart = () => {
 
 onMounted(() => {
   initChart();
-  window.addEventListener("resize", () => {
-    chart?.resize();
+
+  const resizeObserver = new ResizeObserver((entries) => {
+    const contentWidth = entries[0].contentRect.width - 100;
+    console.log(contentWidth);
+    chart?.resize({
+      // height: `${contentWidth / 1.8}px`,
+      width: `${contentWidth}px`,
+    });
   });
+
+  resizeObserver.observe(document.querySelector(".content"));
+
+  // window.addEventListener("resize", () => {
+
+  // });
 });
 
 watch(
@@ -101,7 +119,11 @@ watch(
 </script>
 
 <template>
-  <div ref="chartRef" style="width: 100%; height: 500px"></div>
+  <div
+    ref="chartRef"
+    class="flex-center"
+    style="width: 100%; height: 580px"
+  ></div>
 </template>
 
 <style scoped></style>
