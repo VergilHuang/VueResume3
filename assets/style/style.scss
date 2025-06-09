@@ -164,8 +164,8 @@ button {
 
 .content {
   position: relative;
-  flex: none;
-  width: calc(#{$content_width} - #{$division} - #{$person_width});
+  flex: 1;
+  min-width: 0;
 
   .nav {
     height: $nav_height;
@@ -374,8 +374,6 @@ button {
   }
 
   .content {
-    width: calc(#{$content_width} - #{$division} - #{$person_width});
-
     .dynamic-content {
       margin-top: $division;
     }
@@ -390,8 +388,6 @@ button {
   }
 
   .content {
-    width: calc(#{$content_width} - #{$division} - #{$person_width});
-
     .dynamic-content {
       margin-top: $division;
     }
