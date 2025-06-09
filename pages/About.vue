@@ -139,7 +139,7 @@ const about_text = [
     <section>
       <h1>{{ $t("my_skills") }}</h1>
       <SkillRadar :skills-data="skills_data" />
-      <div>
+      <div class="skill-box-container">
         <SkillBox
           v-for="skill_bd in skills_data"
           :key="skill_bd.id"
@@ -188,11 +188,10 @@ const about_text = [
   }
 
   section:nth-child(3) {
-    .s-box {
-      vertical-align: top;
-      display: inline-block;
-      width: 22%;
-      margin: 12px 40px 30px;
+    .skill-box-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
     }
 
     .skill-box {
@@ -203,10 +202,9 @@ const about_text = [
       gap: 10px;
 
       .percentage {
-        width: 78%;
         height: 6px;
         background: #d8d8d8;
-        flex: none;
+        flex: 1;
 
         .skill-percen {
           height: 100%;
@@ -214,7 +212,8 @@ const about_text = [
         }
       }
       .skill-level {
-        flex: 1;
+        flex: none;
+        width: 70px;
         white-space: nowrap;
         font-weight: 500;
         text-transform: capitalize;
@@ -255,42 +254,44 @@ const about_text = [
 @media screen and (max-width: 1300px) {
   .about {
     section:nth-child(3) {
-      .s-box {
-        width: 20%;
-        margin: 15px 46px;
+      .skill-box-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
       }
     }
   }
 }
 
-@media screen and (max-width: 1180px) {
-  .about {
-    section:nth-child(3) {
-      .s-box {
-        width: 38%;
-        margin: 16px 33px;
-      }
-    }
-  }
-}
+// @media screen and (max-width: 1180px) {
+//   .about {
+//     section:nth-child(3) {
+//       .s-box {
+//         width: 38%;
+//         margin: 16px 33px;
+//       }
+//     }
+//   }
+// }
 
-@media screen and (max-width: 998px) {
-  .about {
-    section:nth-child(3) {
-      .s-box {
-        width: 39%;
-        margin: 16px 34px;
-      }
-    }
-  }
-}
+// @media screen and (max-width: 998px) {
+//   .about {
+//     section:nth-child(3) {
+//       .s-box {
+//         width: 39%;
+//         margin: 16px 34px;
+//       }
+//     }
+//   }
+// }
 
-@media screen and (max-width: 680px) {
+@media screen and (max-width: 430px) {
   .about {
-    section:nth-child(3) {
-      .s-box {
-        width: 32%;
-        margin: 16px 8%;
+    section:nth-child(2) {
+      .service-box {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 20px;
       }
     }
   }

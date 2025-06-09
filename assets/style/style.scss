@@ -214,6 +214,7 @@ button {
       gap: 36px;
       align-items: center;
       border-radius: 8px;
+      overflow: hidden;
     }
 
     .nav-right {
@@ -269,7 +270,7 @@ button {
     }
   }
 
-  $menu_height: 200px;
+  $menu_height: 134px;
   .menu {
     position: relative;
     .menu-lists {
@@ -294,9 +295,10 @@ button {
         text-align: center;
         font-family: "Signika", serif;
         font-size: 1.4rem;
-        height: calc(#{$menu_height} / 3);
+        height: calc(#{$menu_height} / 2);
         color: #222;
         padding: 10px 0;
+        position: relative;
 
         &:not(:last-child):after {
           content: "";
@@ -304,6 +306,9 @@ button {
           width: 70%;
           margin: 0 auto;
           height: 1px;
+          position: absolute;
+          bottom: 0;
+          left: 15%;
           background: #dfdfdf;
         }
 
@@ -367,8 +372,6 @@ button {
   }
 
   .content {
-    width: calc(#{$content_width} - #{$division} - #{$person_width});
-
     .dynamic-content {
       margin-top: $division;
     }
@@ -383,8 +386,6 @@ button {
   }
 
   .content {
-    width: calc(#{$content_width} - #{$division} - #{$person_width});
-
     .dynamic-content {
       margin-top: $division;
     }
@@ -449,6 +450,10 @@ button {
 
     .dynamic-content {
       margin-top: $division;
+
+      section {
+        padding: 27px 15px 46px;
+      }
     }
   }
 }

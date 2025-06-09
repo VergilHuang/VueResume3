@@ -12,19 +12,6 @@ const props = defineProps({
 const chartRef = ref(null);
 let chart = null;
 
-// const getLevelValue = (level) => {
-//   switch (level) {
-//     case "expert":
-//       return 100;
-//     case "experienced":
-//       return 75;
-//     case "basic":
-//       return 50;
-//     default:
-//       return 0;
-//   }
-// };
-
 const initChart = () => {
   if (!chartRef.value) return;
 
@@ -41,7 +28,16 @@ const initChart = () => {
     return avgValue;
   });
 
-  const radius = window.screen.availWidth > 1170 ? "60%" : "50%";
+  let radius = "";
+
+  if (window.screen.availWidth > 1170) {
+    radius = "60%";
+  } else if (window.screen.availWidth > 430) {
+    radius = "50%";
+  } else {
+    radius = "40%";
+  }
+
   const option = {
     title: {
       // text: "Skills Radar Chart",
@@ -94,11 +90,11 @@ onMounted(() => {
   initChart();
 
   const resizeObserver = new ResizeObserver((entries) => {
-    const contentWidth = entries[0].contentRect.width - 100;
-    console.log(contentWidth);
+    // const contentWidth = entries[0].contentRect.width - 100;
+    // console.log(contentWidth);
     chart?.resize({
       // height: `${contentWidth / 1.8}px`,
-      width: `${contentWidth}px`,
+      // width: `${contentWidth}px`,
     });
   });
 

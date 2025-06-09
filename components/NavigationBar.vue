@@ -25,7 +25,7 @@ const toggleMenu = () => {
     menu.style.top = "5px";
     menu.style.opacity = "0";
   } else {
-    menu.style.height = "200px";
+    menu.style.height = "134px";
     menu.style.top = "10px";
     menu.style.opacity = "1";
   }
@@ -114,7 +114,7 @@ const menu_items = [
           v-for="item in menu_items"
           :key="item.name"
           class="menu-item"
-          :to="item.to"
+          :to="$localePath(item.to)"
           @click="beActive"
         >
           {{ $t(item.name) }}
