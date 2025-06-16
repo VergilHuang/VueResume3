@@ -33,7 +33,7 @@ const services_data = ref([
 const skills_data = [
   {
     id: 1,
-    cate_name: "Front-end Core",
+    cate_name: "FE Core",
     skills: [
       { id: 1, title: "JavaScript (ES6+)", percentage: 96, level: "expert" },
       { id: 2, title: "TypeScript", percentage: 68, level: "experienced" },
@@ -45,14 +45,15 @@ const skills_data = [
   },
   {
     id: 2,
-    cate_name: "Framework & Build Tool",
+    cate_name: "Framework/Build Tool",
     skills: [
       { id: 1, title: "Vue 2 / 3", percentage: 96, level: "expert" },
-      { id: 2, title: "React (Hooks)", percentage: 65, level: "experienced" },
+      { id: 2, title: "ReactJS", percentage: 65, level: "experienced" },
       { id: 3, title: "Nuxt", percentage: 86, level: "expert" },
       { id: 4, title: "Vite", percentage: 92, level: "expert" },
       { id: 5, title: "Webpack", percentage: 65, level: "experienced" },
       { id: 6, title: "Module Federation", percentage: 28, level: "basic" },
+      { id: 3, title: "Firebase", percentage: 81, level: "experienced" },
     ],
   },
   {
@@ -66,7 +67,7 @@ const skills_data = [
   },
   {
     id: 4,
-    cate_name: "UI & Style",
+    cate_name: "UI/Style",
     skills: [
       { id: 1, title: "Tailwind CSS", percentage: 94, level: "expert" },
       { id: 2, title: "Element UI", percentage: 88, level: "expert" },
@@ -78,7 +79,7 @@ const skills_data = [
   },
   {
     id: 5,
-    cate_name: "Developer Tools & Quality",
+    cate_name: "Developer Tools/Quality",
     skills: [
       { id: 1, title: "Git", percentage: 92, level: "expert" },
       { id: 2, title: "GitLab CI", percentage: 78, level: "experienced" },
@@ -92,11 +93,10 @@ const skills_data = [
   },
   {
     id: 6,
-    cate_name: "Backend & Communication",
+    cate_name: "Communication",
     skills: [
       { id: 1, title: "RESTful API", percentage: 92, level: "expert" },
       { id: 2, title: "WebSocket", percentage: 86, level: "expert" },
-      { id: 3, title: "Firebase", percentage: 81, level: "experienced" },
     ],
   },
   {
@@ -113,7 +113,8 @@ const about_text = [
   t("about_text_2"),
   t("about_text_3"),
   t("about_text_4"),
-  t("about_text_5"),
+  t("about_text_7"),
+  // t("about_text_5"),
   t("about_text_6"),
 ];
 </script>
