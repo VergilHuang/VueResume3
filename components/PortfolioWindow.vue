@@ -1,29 +1,31 @@
-<script>
-export default {
-  name: "PortfolioWindow",
-  props: ["width", "description"],
-  render() {
-    const self = this;
+<template>
+  <div class="window-container" :style="{ width: width }">
+    <div class="w-window">
+      <slot />
+    </div>
+  </div>
+</template>
 
-    return (
-      <div class="window-container" style={{ width: self.width }}>
-        <div class="w-window shadower">{self.$slots.default}</div>
-      </div>
-    );
+<script setup>
+defineProps({
+  width: {
+    type: String,
+    default: "100%",
   },
-};
+  description: {
+    type: String,
+    default: "",
+  },
+});
 </script>
 
 <style lang="scss">
 .window-container {
-  width: calc(100% / 2);
-  float: left;
-  padding: 12px 24px;
+  padding: 12px 0;
 
   .w-window {
     border-radius: 6px;
-    background: white;
-    vertical-align: top;
+    background: transparent;
     /* overflow: hidden; */
   }
 }

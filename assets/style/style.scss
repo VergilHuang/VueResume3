@@ -1,5 +1,6 @@
 @import url("init.scss");
 @import url("_vue.scss");
+@import url("animate.scss");
 
 $content_width: 1280px;
 $nav_height: 68px;
@@ -35,7 +36,7 @@ button {
 }
 
 .shadower {
-  box-shadow: 0px 0px 48px rgba(4, 6, 4, 0.1);
+  box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.15);
 }
 
 .box-border {

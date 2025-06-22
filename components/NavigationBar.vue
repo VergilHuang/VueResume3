@@ -54,6 +54,10 @@ const menu_items = [
     to: "/resume",
   },
   {
+    name: "portfolio",
+    to: "/portfolio",
+  },
+  {
     name: "contact",
     to: "/contact",
   },
