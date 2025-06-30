@@ -10,7 +10,7 @@ const github = "https://github.com/VergilHuang";
     <div>
       <div class="n-intro">
         <h3 class="n-name">Vergil Huang</h3>
-        <h4 class="n-subtitle">Creative Designer</h4>
+        <h4 class="n-subtitle text-shine">Creative Designer</h4>
       </div>
       <div class="photo-container">
         <img

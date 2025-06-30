@@ -277,6 +277,7 @@ $h_line_height: 23rem;
       position: relative;
       top: -18px;
       left: 10px;
+      padding-right: 20px;
 
       .h-t {
         font-family: "Noto Sans TC", "微軟正黑體", sans-serif;
@@ -348,6 +349,13 @@ div[id^="h-"] {
   height: 5rem;
 }
 
+@media screen and (max-width: 1180px) {
+  .history {
+    .tl-box {
+      width: 90%;
+    }
+  }
+}
 @media screen and (max-width: 680px) {
   .history {
     padding: 40px 10px;
