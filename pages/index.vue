@@ -2,7 +2,11 @@
 definePageMeta({
   middleware: [
     function (to) {
-      if (to.path === "/") {
+      if (to.name.includes("index") && to.name.includes("zh")) {
+        return navigateTo("/zh/about");
+      } else if (to.name.includes("index")) {
+        return navigateTo("/about");
+      } else {
         return navigateTo("/about");
       }
     },

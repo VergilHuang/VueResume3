@@ -4,7 +4,9 @@ import path from "path";
 export default defineNuxtConfig({
   compatibilityDate: "2025-05-15",
   devtools: { enabled: true },
-
+  typescript: {
+    typeCheck: true,
+  },
   modules: [
     "@nuxt/eslint",
     "@nuxt/fonts",
@@ -20,8 +22,11 @@ export default defineNuxtConfig({
   i18n: {
     locales: [
       { code: "en", name: "English", file: "en.json" },
-      { code: "zh-TW", name: "中文", file: "zh-TW.json" },
+      { code: "zh", name: "中文", file: "zh.json" },
     ],
     defaultLocale: "en",
+    bundle: {
+      optimizeTranslationDirective: false,
+    },
   },
 });

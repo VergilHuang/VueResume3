@@ -16,7 +16,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <transition name="slowfade">
+  <Transition name="slowfade">
     <div v-if="show" class="mask-view">
       <div class="indicator-box" :class="{ fade: turnFade }">
         <div class="lds-dual-ring-outer">
@@ -26,7 +26,7 @@ onMounted(() => {
         </div>
       </div>
     </div>
-  </transition>
+  </Transition>
 </template>
 
 <style lang="scss" scoped>

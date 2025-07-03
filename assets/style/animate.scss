@@ -1,7 +1,12 @@
 .text-shine {
   cursor: default;
   color: #ffffff;
-  background: linear-gradient(to right, #4d4d4d 0, white 10%, #4d4d4d 20%);
+  background: linear-gradient(
+    to right,
+    #4d4d4d 0,
+    rgb(156, 156, 156) 10%,
+    #4d4d4d 20%
+  );
   background-size: 200% auto;
   -webkit-background-clip: text;
   background-clip: text;
