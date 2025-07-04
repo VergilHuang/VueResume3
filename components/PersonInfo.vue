@@ -1,4 +1,5 @@
 <script setup>
+import photo from "@/assets/img/vergil_photo.jpg";
 const name = "Vergil Huang";
 const birthday = "1989.01.06";
 const email = "zaq9716643@gmail.com";
@@ -13,11 +14,7 @@ const github = "https://github.com/VergilHuang";
         <h4 class="n-subtitle text-shine">Creative Designer</h4>
       </div>
       <div class="photo-container">
-        <img
-          class="vg-photo"
-          src="/img/vergil_photo.jpg"
-          alt="Vergil's Photo"
-        />
+        <img class="vg-photo" :src="photo" alt="Vergil's Picture" />
       </div>
     </div>
     <div class="vg-info-container">

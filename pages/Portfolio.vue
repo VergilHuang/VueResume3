@@ -11,10 +11,7 @@
             :title="$t('portfolio_tycg_title')"
           >
             <div class="w-pic">
-              <img
-                :src="'/img/rsz_tycg.png'"
-                :alt="$t('portfolio_tycg_title')"
-              />
+              <img :src="rsz_tycg" :alt="$t('portfolio_tycg_title')" />
               <div class="hover-item">
                 <!-- <Icon name="material-symbols:link"></Icon> -->
                 <div class="img-desc">{{ $t("portfolio_tycg_period") }}</div>
@@ -36,10 +33,7 @@
             :title="$t('portfolio_crpd_title')"
           >
             <div class="w-pic">
-              <img
-                :src="'/img/rsz_cypd.png'"
-                :alt="$t('portfolio_crpd_title')"
-              />
+              <img :src="rsz_cypd" :alt="$t('portfolio_crpd_title')" />
               <div class="hover-item">
                 <div class="img-desc">{{ $t("portfolio_crpd_period") }}</div>
               </div>
@@ -53,6 +47,26 @@
           </div>
         </div>
       </div>
+      <h1>{{ $t("portfolio_screen_capture") }}</h1>
+      <div class="portfolio-w">
+        <div class="portfolio-website-box shadower">
+          <div class="portfolio-link">
+            <div class="w-pic">
+              <div
+                :class="`bg-[url(${winlo8})] bg-size-[auto_100%] hover:bg-size-[auto_200%]  bg-position-[50%_20%] hover:bg-position-[50%_20%] bg-no-repeat bg-black h-[300px]  hover:blur-none! transition-all duration-300`"
+                :alt="$t('portfolio_winlo8_title')"
+              />
+            </div>
+          </div>
+          <div class="w-intro">
+            <p class="w-title">{{ $t("portfolio_winlo8_title") }}</p>
+            <p class="w-subtext">
+              {{ $t("portfolio_winlo8_description") }}
+            </p>
+          </div>
+        </div>
+      </div>
+
       <h1>{{ $t("portfolio_fun_work") }}</h1>
       <div>
         <h3>{{ $t("portfolio_3d_animation_title") }}</h3>
@@ -134,7 +148,14 @@
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+import winlo8 from "@/assets/img/winlo8.png";
+// import winlo8_bo from "@/assets/img/winlo8-bo.png";
+// import oh_game from "@/assets/img/oh-game.png";
+// import oh_game_bo from "@/assets/img/oh-game-bo.png";
+import rsz_tycg from "@/assets/img/rsz_tycg.png";
+import rsz_cypd from "@/assets/img/rsz_cypd.png";
+</script>
 
 <style lang="scss">
 .portfolio-w {
@@ -212,7 +233,7 @@
     }
 
     .w-intro {
-      padding: 6px 4px;
+      padding: 6px 12px;
       .w-title {
         font-size: 1.2rem;
         color: #222;
