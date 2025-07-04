@@ -16,7 +16,7 @@ export default defineNuxtConfig({
     "@nuxtjs/i18n",
     "nuxt-svgo",
   ],
-  css: ["~/assets/style/main.css"],
+  css: ["~/assets/style/style.scss", "~/assets/style/main.css"],
 
   image: {},
 

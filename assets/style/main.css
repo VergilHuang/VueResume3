@@ -1,5 +1,5 @@
-/* @import "tailwindcss"; */
+@import "tailwindcss";
 /* @import "@nuxt/ui"; */
-@layer theme, base, components, utilities;
+/* @layer theme, base, components, utilities;
 @import "tailwindcss/theme.css" layer(theme);
-@import "tailwindcss/utilities.css" layer(utilities);
+@import "tailwindcss/utilities.css" layer(utilities); */

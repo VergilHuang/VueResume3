@@ -21,7 +21,9 @@ defineProps({
 
 <style lang="scss">
 .window-container {
-  padding: 12px 0;
+  margin: 12px 0;
+  border: 1px solid #888;
+  border-radius: 6px;
 
   .w-window {
     border-radius: 6px;
