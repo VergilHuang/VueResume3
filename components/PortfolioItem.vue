@@ -24,10 +24,6 @@ defineProps({
     type: String,
     default: "",
   },
-  isLink: {
-    type: Boolean,
-    default: false,
-  },
   useBackgroundImage: {
     type: Boolean,
     default: false,
@@ -37,8 +33,9 @@ defineProps({
 
 <template>
   <div class="shadow-md rounded overflow-hidden">
+    <!-- 外部連結的圖片 -->
     <a
-      v-if="isLink && link"
+      v-if="link"
       class="block relative"
       :href="link"
       target="_blank"
@@ -63,21 +60,30 @@ defineProps({
       </div>
     </a>
 
+    <!-- 非外部連結的圖片 -->
     <div v-else class="relative">
-      <img
-        v-if="!useBackgroundImage"
-        :src="imageSrc"
-        :alt="imageAlt || title"
-        class="object-cover w-full aspect-video transition duration-200"
-      />
-      <div
-        v-else
-        class="bg-size-[auto_100%] hover:bg-size-[auto_220%] bg-position-[50%_0%] bg-no-repeat bg-black h-[300px] hover:blur-none! transition-all duration-300"
-        :style="{ backgroundImage: `url(${imageSrc})` }"
-      ></div>
+      <PreviewModal>
+        <template #trigger>
+          <img
+            v-if="!useBackgroundImage"
+            :src="imageSrc"
+            :alt="imageAlt || title"
+            class="object-cover w-full aspect-video transition duration-200"
+          />
+          <div
+            v-else
+            class="bg-size-[auto_100%] hover:bg-size-[auto_220%] bg-position-[50%_0%] bg-no-repeat bg-black h-[300px] hover:blur-none! transition-all duration-300"
+            :style="{ backgroundImage: `url(${imageSrc})` }"
+          ></div>
+        </template>
+        <template #default>
+          <img :src="imageSrc" :alt="imageAlt || title" />
+        </template>
+      </PreviewModal>
     </div>
 
-    <div class="p-5">
+    <!-- 圖片描述 -->
+    <div class="p-3">
       <p class="text-lg font-semibold text-gray-800">
         {{ title }}
       </p>
