@@ -1,4 +1,5 @@
 <script setup>
+import logo from "@/assets/img/logo.png";
 import { ref, onMounted } from "vue";
 
 const turnFade = ref(false);
@@ -21,7 +22,7 @@ onMounted(() => {
       <div class="indicator-box" :class="{ fade: turnFade }">
         <div class="lds-dual-ring-outer">
           <div class="lds-dual-ring">
-            <img src="/img/logo.png" />
+            <img :src="logo" alt="logo" />
           </div>
         </div>
       </div>
