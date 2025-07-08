@@ -64,7 +64,7 @@ onUnmounted(() => {
 
           <!-- 模態框內容 -->
           <div
-            class="relative z-10 max-w-4xl max-h-[90vh] overflow-auto bg-white rounded-lg shadow-2xl"
+            class="relative z-10 max-w-[90vw] max-h-[90vh] overflow-auto bg-white rounded-lg shadow-2xl"
             @click.stop
           >
             <!-- 關閉按鈕 -->

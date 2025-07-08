@@ -72,7 +72,7 @@ defineProps({
           />
           <div
             v-else
-            class="bg-size-[auto_100%] hover:bg-size-[auto_220%] bg-position-[50%_0%] bg-no-repeat bg-black h-[300px] hover:blur-none! transition-all duration-300"
+            class="bg-size-[auto_100%] hover:bg-size-[auto_220%] bg-position-[50%_0%] bg-no-repeat bg-black w-full aspect-video hover:blur-none! transition-all duration-300"
             :style="{ backgroundImage: `url(${imageSrc})` }"
           ></div>
         </template>

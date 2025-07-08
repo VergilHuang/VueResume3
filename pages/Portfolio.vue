@@ -1,6 +1,6 @@
 <script setup>
 import winlo8 from "@/assets/img/winlo8.png";
-// import winlo8_bo from "@/assets/img/winlo8-bo.png";
+import winlo8_bo from "@/assets/img/winlo8-bo.png";
 // import oh_game from "@/assets/img/oh-game.png";
 // import oh_game_bo from "@/assets/img/oh-game-bo.png";
 import rsz_tycg from "@/assets/img/rsz_tycg.png";
@@ -13,7 +13,7 @@ import rsz_cypd from "@/assets/img/rsz_cypd.png";
       <h1 class="text-2xl font-bold mb-4">
         {{ $t("portfolio_online_website") }}
       </h1>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
         <PortfolioItem
           :title="$t('portfolio_tycg_title')"
           :description="$t('portfolio_tycg_description')"
@@ -21,7 +21,6 @@ import rsz_cypd from "@/assets/img/rsz_cypd.png";
           :image-alt="$t('portfolio_tycg_title')"
           :period="$t('portfolio_tycg_period')"
           link="https://taotalk.tycg.gov.tw/"
-          :is-link="true"
         />
 
         <PortfolioItem
@@ -31,34 +30,24 @@ import rsz_cypd from "@/assets/img/rsz_cypd.png";
           :image-alt="$t('portfolio_crpd_title')"
           :period="$t('portfolio_crpd_period')"
           link="https://crpd.sfaa.gov.tw/"
-          :is-link="true"
         />
       </div>
 
       <h1 class="text-2xl font-bold mb-4">
         {{ $t("portfolio_screen_capture") }}
       </h1>
-      <!-- <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-        <div class="shadow-md rounded overflow-hidden">
-          <div
-            class="relative h-[300px] bg-black bg-no-repeat bg-center bg-cover transition-all duration-300"
-            :style="{ backgroundImage: `url(${winlo8})` }"
-          ></div>
-          <div class="p-3">
-            <p class="text-lg font-semibold text-gray-800">
-              {{ $t("portfolio_winlo8_title") }}
-            </p>
-            <p class="text-sm text-gray-500">
-              {{ $t("portfolio_winlo8_description") }}
-            </p>
-          </div>
-        </div>
-      </div> -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
         <PortfolioItem
           :title="$t('portfolio_winlo8_title')"
           :description="$t('portfolio_winlo8_description')"
           :image-src="winlo8"
+          :use-background-image="true"
+        />
+        <PortfolioItem
+          :title="$t('portfolio_winlo8_bo_title')"
+          :description="$t('portfolio_winlo8_bo_description')"
+          :image-src="winlo8_bo"
           :use-background-image="true"
         />
       </div>
