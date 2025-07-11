@@ -18,7 +18,7 @@ const beActive = () => {
 };
 
 const toggleMenu = () => {
-  let menu = document.getElementById("menu-panel");
+  const menu = document.getElementById("menu-panel");
 
   if (menu_opened.value) {
     menu.style.height = "0";
