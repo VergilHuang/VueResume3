@@ -1,8 +1,8 @@
 <script setup>
-import { ref, onMounted, onBeforeUnmount } from "#imports";
+import { ref, watch } from "#imports";
 import animateScrollTo from "animated-scroll-to";
 
-const viewportWidth = ref(0);
+const { viewportWidth, isMobile } = useViewportSize();
 const isMenuOpened = ref(false);
 const menuRef = ref(null);
 
@@ -11,7 +11,7 @@ const beActive = () => {
     toggleMenu();
   }
   // if on mobile device, include the smooth scroll-to function
-  if (viewportWidth.value <= 680) {
+  if (isMobile()) {
     animateScrollTo(document.getElementById("navigationBar"), {
       speed: 600,
     });
@@ -25,22 +25,11 @@ const toggleMenu = () => {
   }
 };
 
-const _detectSize = () => {
-  if (import.meta.client) {
-    viewportWidth.value = document.body.clientWidth;
-    if (viewportWidth.value <= 680) {
-      isMenuOpened.value = false;
-    }
+// 監聽視窗大小變化，當切換到桌面版時關閉選單
+watch(viewportWidth, (newWidth) => {
+  if (newWidth > 680) {
+    isMenuOpened.value = false;
   }
-};
-
-onMounted(() => {
-  viewportWidth.value = document.body.clientWidth;
-  window.addEventListener("resize", _detectSize);
-});
-
-onBeforeUnmount(() => {
-  window.removeEventListener("resize", _detectSize);
 });
 
 const menuItems = [
