@@ -1,16 +1,17 @@
 <script setup>
-import { ref, onMounted, onBeforeUnmount } from "#imports";
+import { ref, watch } from "#imports";
 import animateScrollTo from "animated-scroll-to";
 
-const desktopSize = ref(0);
-const menu_opened = ref(false);
+const { viewportWidth, isMobile } = useViewportSize();
+const isMenuOpened = ref(false);
+const menuRef = ref(null);
 
 const beActive = () => {
-  if (menu_opened.value) {
+  if (isMenuOpened.value) {
     toggleMenu();
   }
   // if on mobile device, include the smooth scroll-to function
-  if (desktopSize.value <= 680) {
+  if (isMobile()) {
     animateScrollTo(document.getElementById("navigationBar"), {
       speed: 600,
     });
@@ -18,37 +19,20 @@ const beActive = () => {
 };
 
 const toggleMenu = () => {
-  let menu = document.getElementById("menu-panel");
-
-  if (menu_opened.value) {
-    menu.style.height = "0";
-    menu.style.top = "5px";
-    menu.style.opacity = "0";
-  } else {
-    menu.style.height = "134px";
-    menu.style.top = "10px";
-    menu.style.opacity = "1";
-  }
-  menu_opened.value = !menu_opened.value;
-};
-
-const _detectSize = () => {
-  desktopSize.value = document.body.clientWidth;
-  if (desktopSize.value <= 680) {
-    menu_opened.value = false;
+  if (import.meta.client && menuRef.value) {
+    menuRef.value.classList.toggle("menu-opened");
+    isMenuOpened.value = !isMenuOpened.value;
   }
 };
 
-onMounted(() => {
-  desktopSize.value = document.body.clientWidth;
-  window.addEventListener("resize", _detectSize);
+// 監聽視窗大小變化，當切換到桌面版時關閉選單
+watch(viewportWidth, (newWidth) => {
+  if (newWidth > 680) {
+    isMenuOpened.value = false;
+  }
 });
 
-onBeforeUnmount(() => {
-  window.removeEventListener("resize", _detectSize);
-});
-
-const menu_items = [
+const menuItems = [
   {
     name: "resume",
     to: "/resume",
@@ -72,9 +56,9 @@ const menu_items = [
           <NuxtLink class="home-btn" :to="$localePath('/about')">
             <Icon name="healthicons:home-alt" size="30px" />
           </NuxtLink>
-          <template v-if="desktopSize > 680">
+          <template v-if="viewportWidth > 680">
             <NuxtLink
-              v-for="item in menu_items"
+              v-for="item in menuItems"
               :key="item.name"
               class="router-link"
               :to="$localePath(item.to)"
@@ -87,7 +71,7 @@ const menu_items = [
         <div class="nav-right">
           <LanguageSwitcher />
           <button
-            v-if="desktopSize <= 680"
+            v-if="viewportWidth <= 680"
             class="menu-btn"
             @click.prevent="toggleMenu"
           >
@@ -110,12 +94,13 @@ const menu_items = [
     </nav>
     <div class="menu">
       <div
-        v-if="desktopSize <= 680"
+        v-if="viewportWidth <= 680"
         id="menu-panel"
+        ref="menuRef"
         class="menu-lists shadower"
       >
         <NuxtLink
-          v-for="item in menu_items"
+          v-for="item in menuItems"
           :key="item.name"
           class="menu-item"
           :to="$localePath(item.to)"
