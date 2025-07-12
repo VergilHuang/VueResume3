@@ -4,6 +4,7 @@ import animateScrollTo from "animated-scroll-to";
 
 const desktopSize = ref(0);
 const menu_opened = ref(false);
+const menuRef = ref(null);
 
 const beActive = () => {
   if (menu_opened.value) {
@@ -18,17 +19,7 @@ const beActive = () => {
 };
 
 const toggleMenu = () => {
-  const menu = document.getElementById("menu-panel");
-
-  if (menu_opened.value) {
-    menu.style.height = "0";
-    menu.style.top = "5px";
-    menu.style.opacity = "0";
-  } else {
-    menu.style.height = "134px";
-    menu.style.top = "10px";
-    menu.style.opacity = "1";
-  }
+  menuRef.value.classList.toggle("menu-opened");
   menu_opened.value = !menu_opened.value;
 };
 
@@ -112,6 +103,7 @@ const menu_items = [
       <div
         v-if="desktopSize <= 680"
         id="menu-panel"
+        ref="menuRef"
         class="menu-lists shadower"
       >
         <NuxtLink

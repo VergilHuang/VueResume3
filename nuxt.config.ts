@@ -3,7 +3,9 @@ import tailwindcss from "@tailwindcss/vite";
 
 export default defineNuxtConfig({
   compatibilityDate: "2025-05-15",
-  devtools: { enabled: true },
+  devtools: {
+    enabled: process.env.NODE_ENV !== "production",
+  },
   typescript: {
     typeCheck: true,
   },
@@ -33,5 +35,8 @@ export default defineNuxtConfig({
 
   vite: {
     plugins: [tailwindcss()],
+    server: {
+      // allowedHosts: [process.env.NGROK_URL || "localhost"],
+    },
   },
 });
