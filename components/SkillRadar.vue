@@ -40,7 +40,6 @@ const initChart = () => {
 
   const option = {
     title: {
-      // text: "Skills Radar Chart",
       text: "Competency Spider Chart",
       top: "10%",
       left: "center",
@@ -89,7 +88,7 @@ const initChart = () => {
 onMounted(() => {
   initChart();
 
-  const resizeObserver = new ResizeObserver((entries) => {
+  const resizeObserver = new ResizeObserver(() => {
     // const contentWidth = entries[0].contentRect.width - 100;
     // console.log(contentWidth);
     chart?.resize({

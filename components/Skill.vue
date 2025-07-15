@@ -29,16 +29,6 @@ onMounted(() => {
     modifier: utils.round(0),
     onRender: function () {
       percentage.value = skillData.percentage;
-      // console.log(skillData.percentage);
-      // if (skillData.percentage <= 33) {
-      //   percentage.value = 33;
-      // } else if (skillData.percentage <= 66) {
-      //   percentage.value = 66;
-      // } else if (skillData.percentage <= 100) {
-      //   percentage.value = 100;
-      // } else {
-      //   percentage.value = 0;
-      // }
     },
   });
 });

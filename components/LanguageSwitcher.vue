@@ -36,7 +36,7 @@ const switchLanguage = (lang) => {
         @click="switchLanguage(lang)"
       >
         <span class="flag">
-          <FlagTW v-if="lang.code === 'zh-TW'" filled></FlagTW>
+          <FlagTW v-if="lang.code === 'zh-tw'" filled></FlagTW>
           <FlagEN v-else filled></FlagEN>
         </span>
         <span class="name">{{ lang.name }}</span>
@@ -106,5 +106,7 @@ $main_color: #5069c3;
 .name {
   font-size: 1rem;
   line-height: 1rem;
+  position: relative;
+  top: -2px;
 }
 </style>
