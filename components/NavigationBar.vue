@@ -1,6 +1,5 @@
-<script setup>
+<script setup lang="ts">
 import { ref, watch } from "#imports";
-import animateScrollTo from "animated-scroll-to";
 
 const { viewportWidth, isMobile } = useViewportSize();
 const isMenuOpened = ref(false);
@@ -12,22 +11,28 @@ const beActive = () => {
   }
   // if on mobile device, include the smooth scroll-to function
   if (isMobile()) {
-    animateScrollTo(document.getElementById("navigationBar"), {
-      speed: 600,
-    });
+    const ele = document.getElementById("navigationBar");
+    if (ele) {
+      setTimeout(() => {
+        ele.scrollIntoView({
+          behavior: "auto",
+          block: "start",
+        });
+      }, 200);
+    }
   }
 };
 
 const toggleMenu = () => {
   if (import.meta.client && menuRef.value) {
-    menuRef.value.classList.toggle("menu-opened");
+    (menuRef.value as HTMLElement).classList.toggle("menu-opened");
     isMenuOpened.value = !isMenuOpened.value;
   }
 };
 
 // 監聽視窗大小變化，當切換到桌面版時關閉選單
-watch(viewportWidth, (newWidth) => {
-  if (newWidth > 680) {
+watch(viewportWidth, () => {
+  if (!isMobile() && isMenuOpened.value) {
     isMenuOpened.value = false;
   }
 });
@@ -71,7 +76,7 @@ const menuItems = [
         <div class="nav-right">
           <LanguageSwitcher />
           <button
-            v-if="viewportWidth <= 680"
+            v-if="isMobile()"
             class="menu-btn"
             @click.prevent="toggleMenu"
           >
@@ -94,7 +99,7 @@ const menuItems = [
     </nav>
     <div class="menu">
       <div
-        v-if="viewportWidth <= 680"
+        v-if="isMobile()"
         id="menu-panel"
         ref="menuRef"
         class="menu-lists shadower"
