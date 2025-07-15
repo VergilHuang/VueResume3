@@ -1,9 +1,9 @@
-<script setup>
-import { ref, useI18n } from "#imports";
+<script setup lang="ts">
+import { useI18n } from "#imports";
 
 const { t } = useI18n();
 
-const services_data = ref([
+const services_data = [
   {
     id: 1,
     icon: "icon-park-outline:system",
@@ -28,7 +28,7 @@ const services_data = ref([
     title: t("service_title_4"),
     text: t("service_text_4"),
   },
-]);
+];
 
 const skills_data = [
   {
@@ -53,7 +53,7 @@ const skills_data = [
       { id: 4, title: "Vite", percentage: 92, level: "expert" },
       { id: 5, title: "Webpack", percentage: 65, level: "experienced" },
       { id: 6, title: "Module Federation", percentage: 28, level: "basic" },
-      { id: 3, title: "Firebase", percentage: 81, level: "experienced" },
+      { id: 7, title: "Firebase", percentage: 81, level: "experienced" },
     ],
   },
   {
@@ -108,6 +108,7 @@ const skills_data = [
     ],
   },
 ];
+
 const about_text = [
   t("about_text_1"),
   t("about_text_2"),
@@ -263,28 +264,6 @@ const about_text = [
     }
   }
 }
-
-// @media screen and (max-width: 1180px) {
-//   .about {
-//     section:nth-child(3) {
-//       .s-box {
-//         width: 38%;
-//         margin: 16px 33px;
-//       }
-//     }
-//   }
-// }
-
-// @media screen and (max-width: 998px) {
-//   .about {
-//     section:nth-child(3) {
-//       .s-box {
-//         width: 39%;
-//         margin: 16px 34px;
-//       }
-//     }
-//   }
-// }
 
 @media screen and (max-width: 430px) {
   .about {
