@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import { ref, watch } from "#imports";
 import animateScrollTo from "animated-scroll-to";
 
@@ -12,7 +12,7 @@ const beActive = () => {
   }
   // if on mobile device, include the smooth scroll-to function
   if (isMobile()) {
-    animateScrollTo(document.getElementById("navigationBar"), {
+    animateScrollTo(document.getElementById("navigationBar") as HTMLElement, {
       speed: 600,
     });
   }
@@ -20,13 +20,13 @@ const beActive = () => {
 
 const toggleMenu = () => {
   if (import.meta.client && menuRef.value) {
-    menuRef.value.classList.toggle("menu-opened");
+    (menuRef.value as HTMLElement).classList.toggle("menu-opened");
     isMenuOpened.value = !isMenuOpened.value;
   }
 };
 
 // 監聽視窗大小變化，當切換到桌面版時關閉選單
-watch(viewportWidth, (newWidth) => {
+watch(viewportWidth, (newWidth: number) => {
   if (newWidth > 680) {
     isMenuOpened.value = false;
   }
