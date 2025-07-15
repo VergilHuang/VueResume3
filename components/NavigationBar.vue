@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, watch } from "#imports";
-import animateScrollTo from "animated-scroll-to";
+// import animateScrollTo from "animated-scroll-to";
 
 const { viewportWidth, isMobile } = useViewportSize();
 const isMenuOpened = ref(false);
@@ -12,9 +12,13 @@ const beActive = () => {
   }
   // if on mobile device, include the smooth scroll-to function
   if (isMobile()) {
-    animateScrollTo(document.getElementById("navigationBar") as HTMLElement, {
-      speed: 600,
-    });
+    const ele = document.getElementById("navigationBar");
+    if (ele) {
+      ele.scrollIntoView({
+        behavior: "smooth", // For smooth scrolling animation
+        block: "center", // Aligns the element vertically in the center
+      });
+    }
   }
 };
 
