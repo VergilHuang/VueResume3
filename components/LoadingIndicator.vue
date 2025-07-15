@@ -5,14 +5,17 @@ import { ref, onMounted } from "vue";
 const turnFade = ref(false);
 const show = ref(true);
 
+const fadeTimeout = 1000;
+const showTimeout = 1300;
+
 onMounted(() => {
   setTimeout(() => {
     turnFade.value = true;
-  }, 1000);
+  }, fadeTimeout);
 
   setTimeout(() => {
     show.value = false;
-  }, 1300);
+  }, showTimeout);
 });
 </script>
 
@@ -95,8 +98,8 @@ onMounted(() => {
     position: absolute;
     width: 50px;
     height: 50px;
-    top: 31px;
-    left: 28px;
+    top: 27px;
+    left: 23px;
   }
 }
 
