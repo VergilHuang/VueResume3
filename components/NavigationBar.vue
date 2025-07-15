@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { ref, watch } from "#imports";
-// import animateScrollTo from "animated-scroll-to";
 
 const { viewportWidth, isMobile } = useViewportSize();
 const isMenuOpened = ref(false);
@@ -14,10 +13,12 @@ const beActive = () => {
   if (isMobile()) {
     const ele = document.getElementById("navigationBar");
     if (ele) {
-      ele.scrollIntoView({
-        behavior: "smooth", // For smooth scrolling animation
-        block: "center", // Aligns the element vertically in the center
-      });
+      setTimeout(() => {
+        ele.scrollIntoView({
+          behavior: "auto",
+          block: "start",
+        });
+      }, 200);
     }
   }
 };
@@ -30,8 +31,8 @@ const toggleMenu = () => {
 };
 
 // 監聽視窗大小變化，當切換到桌面版時關閉選單
-watch(viewportWidth, (newWidth: number) => {
-  if (newWidth > 680) {
+watch(viewportWidth, () => {
+  if (!isMobile() && isMenuOpened.value) {
     isMenuOpened.value = false;
   }
 });
@@ -75,7 +76,7 @@ const menuItems = [
         <div class="nav-right">
           <LanguageSwitcher />
           <button
-            v-if="viewportWidth <= 680"
+            v-if="isMobile()"
             class="menu-btn"
             @click.prevent="toggleMenu"
           >
@@ -98,7 +99,7 @@ const menuItems = [
     </nav>
     <div class="menu">
       <div
-        v-if="viewportWidth <= 680"
+        v-if="isMobile()"
         id="menu-panel"
         ref="menuRef"
         class="menu-lists shadower"
