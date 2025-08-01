@@ -72,7 +72,7 @@ defineProps({
           />
           <div
             v-else
-            class="bg-size-[auto_100%] hover:bg-size-[auto_220%] bg-position-[50%_0%] bg-no-repeat bg-black w-full aspect-video hover:blur-none! transition-all duration-300"
+            class="bg-size-[auto_100%] hover:bg-size-[auto_150%] bg-position-[50%_0%] bg-no-repeat bg-black w-full aspect-video hover:blur-none! transition-all duration-300"
             :style="{ backgroundImage: `url(${imageSrc})` }"
           ></div>
         </template>
@@ -83,8 +83,8 @@ defineProps({
     </div>
 
     <!-- 圖片描述 -->
-    <div class="p-3">
-      <p class="text-lg font-semibold text-gray-800">
+    <div class="p-4">
+      <p class="text-lg mb-2 font-semibold text-gray-800">
         {{ title }}
       </p>
       <p class="text-sm text-gray-500">

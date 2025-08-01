@@ -1,6 +1,6 @@
 @import url("init.scss");
-@import url("_vue.scss");
-@import url("animate.scss");
+@import url("vue-transition.scss");
+@import url("custom-animate.scss");
 
 $content_width: 1280px;
 $nav_height: 68px;
@@ -12,19 +12,10 @@ body::-webkit-scrollbar {
   display: none;
 }
 
-a {
-  transition-duration: 0.2s;
-}
-
 .flex-center {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-button {
-  border: 0;
-  background: transparent;
 }
 
 .main_color {

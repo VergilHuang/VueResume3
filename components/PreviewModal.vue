@@ -60,16 +60,19 @@ onUnmounted(() => {
           @click="handleBackdropClick"
         >
           <!-- 黑色背景遮罩 -->
-          <div ref="backdrop" class="absolute inset-0 bg-black/80"></div>
+          <div
+            ref="backdrop"
+            class="absolute inset-0 bg-black/80 overscroll-contain"
+          ></div>
 
           <!-- 模態框內容 -->
           <div
-            class="relative z-10 max-w-[90vw] max-h-[90vh] overflow-auto bg-white rounded-lg shadow-2xl"
+            class="relative z-10 max-w-[90vw] max-h-[90vh] bg-transparent rounded-lg shadow-2xl overflow-visible"
             @click.stop
           >
             <!-- 關閉按鈕 -->
             <button
-              class="absolute top-4 right-4 z-20 p-2 text-gray-500 hover:text-gray-700 transition-colors duration-200"
+              class="absolute -top-2 -right-2 p-0 z-20 text-white shadow-2xl transition-colors duration-200 rounded-full border-white border-2"
               aria-label="關閉"
               @click="closeModal"
             >
