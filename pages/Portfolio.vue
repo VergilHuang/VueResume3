@@ -1,8 +1,8 @@
 <script setup>
 import winlo8 from "@/assets/img/winlo8.png";
 import winlo8_bo from "@/assets/img/winlo8-bo.png";
-// import oh_game from "@/assets/img/oh-game.png";
-// import oh_game_bo from "@/assets/img/oh-game-bo.png";
+import oh_game from "@/assets/img/oh-game.png";
+import oh_game_bo from "@/assets/img/oh-game-bo.png";
 import rsz_tycg from "@/assets/img/rsz_tycg.png";
 import rsz_cypd from "@/assets/img/rsz_cypd.png";
 </script>
@@ -52,7 +52,22 @@ import rsz_cypd from "@/assets/img/rsz_cypd.png";
         />
       </div>
 
-      <h1 class="text-2xl font-bold mb-4">{{ $t("portfolio_fun_work") }}</h1>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+        <PortfolioItem
+          :title="$t('lottery_website')"
+          :description="$t('portfolio_oh_game_description')"
+          :image-src="oh_game"
+          :use-background-image="true"
+        />
+        <PortfolioItem
+          :title="$t('portfolio_winlo8_bo_title')"
+          :description="$t('portfolio_oh_game_bo_description')"
+          :image-src="oh_game_bo"
+          :use-background-image="true"
+        />
+      </div>
+
+      <!-- <h1 class="text-2xl font-bold mb-4">{{ $t("portfolio_fun_work") }}</h1>
       <div class="space-y-6">
         <div>
           <h3 class="text-lg font-semibold">
@@ -102,7 +117,7 @@ import rsz_cypd from "@/assets/img/rsz_cypd.png";
             ></iframe>
           </PortfolioWindow>
         </div>
-      </div>
+      </div> -->
     </section>
   </div>
 </template>
