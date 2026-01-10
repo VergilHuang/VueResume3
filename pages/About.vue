@@ -30,17 +30,20 @@ const services_data = [
   },
 ];
 
+// score under 75 is experienced, above which is expert, and under 50 is basic
 const skills_data = [
   {
     id: 1,
-    cate_name: "FE Core",
+    cate_name: "Core",
     skills: [
-      { id: 1, title: "JavaScript (ES6+)", percentage: 96, level: "expert" },
-      { id: 2, title: "TypeScript", percentage: 68, level: "experienced" },
-      { id: 3, title: "HTML5 / CSS3", percentage: 94, level: "expert" },
-      { id: 4, title: "Flexbox / Grid", percentage: 90, level: "expert" },
-      { id: 5, title: "Responsive Design", percentage: 88, level: "expert" },
-      { id: 6, title: "PWA", percentage: 88, level: "expert" },
+      { id: 1, title: "HTML5 / CSS3", percentage: 94, level: "expert" },
+      { id: 2, title: "JavaScript (ES6+)", percentage: 95, level: "expert" },
+      { id: 3, title: "TypeScript", percentage: 75, level: "experienced" },
+      { id: 4, title: "PWA", percentage: 70, level: "experienced" },
+      { id: 5, title: "NodeJS", percentage: 75, level: "experienced" },
+      { id: 6, title: "Docker", percentage: 70, level: "experienced" },
+      { id: 7, title: "PostgreSQL", percentage: 48, level: "basic" },
+      { id: 8, title: "Security (SSCP)", percentage: 60, level: "experienced" },
     ],
   },
   {
@@ -49,11 +52,12 @@ const skills_data = [
     skills: [
       { id: 1, title: "Vue 2 / 3", percentage: 96, level: "expert" },
       { id: 2, title: "ReactJS", percentage: 65, level: "experienced" },
-      { id: 3, title: "Nuxt", percentage: 86, level: "expert" },
+      { id: 3, title: "NuxtJS", percentage: 86, level: "expert" },
+      { id: 3, title: "NextJS", percentage: 75, level: "experienced" },
       { id: 4, title: "Vite", percentage: 92, level: "expert" },
-      { id: 5, title: "Webpack", percentage: 65, level: "experienced" },
-      { id: 6, title: "Module Federation", percentage: 28, level: "basic" },
-      { id: 7, title: "Firebase", percentage: 81, level: "experienced" },
+      { id: 5, title: "Webpack", percentage: 72, level: "experienced" },
+      { id: 6, title: "Module Federation", percentage: 62, level: "experienced" },
+      { id: 7, title: "Firebase", percentage: 75, level: "experienced" },
     ],
   },
   {
@@ -69,12 +73,12 @@ const skills_data = [
     id: 4,
     cate_name: "UI/Style",
     skills: [
-      { id: 1, title: "Tailwind CSS", percentage: 94, level: "expert" },
-      { id: 2, title: "Element UI", percentage: 88, level: "expert" },
-      { id: 3, title: "Ant Design", percentage: 88, level: "expert" },
-      { id: 4, title: "Vant UI", percentage: 90, level: "expert" },
-      { id: 5, title: "Material UI", percentage: 76, level: "experienced" },
-      { id: 6, title: "Storybook", percentage: 70, level: "experienced" },
+      { id: 4, title: "Tailwind CSS", percentage: 94, level: "expert" },
+      { id: 5, title: "Element UI", percentage: 88, level: "expert" },
+      { id: 6, title: "Ant Design", percentage: 85, level: "expert" },
+      { id: 7, title: "Vant UI", percentage: 90, level: "expert" },
+      { id: 8, title: "Material UI", percentage: 76, level: "experienced" },
+      { id: 9, title: "Storybook", percentage: 70, level: "experienced" },
     ],
   },
   {
@@ -95,18 +99,18 @@ const skills_data = [
     id: 6,
     cate_name: "Communication",
     skills: [
-      { id: 1, title: "RESTful API", percentage: 92, level: "expert" },
-      { id: 2, title: "WebSocket", percentage: 86, level: "expert" },
+      { id: 1, title: "RESTful API", percentage: 90, level: "expert" },
+      { id: 2, title: "WebSocket", percentage: 80, level: "expert" },
     ],
   },
-  {
-    id: 7,
-    cate_name: "Design Collaboration",
-    skills: [
-      { id: 1, title: "Figma", percentage: 80, level: "experienced" },
-      { id: 2, title: "Zeplin", percentage: 80, level: "experienced" },
-    ],
-  },
+  // {
+  //   id: 7,
+  //   cate_name: "Design Collaboration",
+  //   skills: [
+  //     { id: 1, title: "Figma", percentage: 60, level: "basic" },
+  //     { id: 2, title: "Zeplin", percentage: 60, level: "basic" },
+  //   ],
+  // },
 ];
 
 const about_text = [
@@ -193,7 +197,7 @@ const about_text = [
     .skill-box-container {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
+      gap: 40px;
     }
 
     .skill-box {
@@ -215,7 +219,7 @@ const about_text = [
       }
       .skill-level {
         flex: none;
-        width: 70px;
+        min-width: 90px;
         white-space: nowrap;
         font-weight: 500;
         text-transform: capitalize;
@@ -242,10 +246,10 @@ const about_text = [
   .about-text {
     font-size: 1.1rem;
     font-weight: 500;
-    line-height: 1.75;
+    line-height: 1.5;
     font-size: 1.1rem;
     color: #333;
-    margin-bottom: 1.5em;
+    margin-bottom: 1.2em;
 
     // &:nth-child(2) {
     //   text-indent: 2em;
@@ -259,7 +263,6 @@ const about_text = [
       .skill-box-container {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
       }
     }
   }

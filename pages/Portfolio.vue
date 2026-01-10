@@ -60,7 +60,7 @@ import rsz_cypd from "@/assets/img/rsz_cypd.png";
           :use-background-image="true"
         />
         <PortfolioItem
-          :title="$t('portfolio_winlo8_bo_title')"
+          :title="$t('portfolio_oh_game_bo_title')"
           :description="$t('portfolio_oh_game_bo_description')"
           :image-src="oh_game_bo"
           :use-background-image="true"
