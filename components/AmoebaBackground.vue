@@ -1,7 +1,4 @@
-<script setup>
-const props = defineProps({});
-const emit = defineEmits([]);
-</script>
+<script setup></script>
 
 <template>
   <div class="amoeba">

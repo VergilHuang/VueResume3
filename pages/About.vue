@@ -56,7 +56,12 @@ const skills_data = [
       { id: 3, title: "NextJS", percentage: 75, level: "experienced" },
       { id: 4, title: "Vite", percentage: 92, level: "expert" },
       { id: 5, title: "Webpack", percentage: 72, level: "experienced" },
-      { id: 6, title: "Module Federation", percentage: 62, level: "experienced" },
+      {
+        id: 6,
+        title: "Module Federation",
+        percentage: 62,
+        level: "experienced",
+      },
       { id: 7, title: "Firebase", percentage: 75, level: "experienced" },
     ],
   },
@@ -177,7 +182,6 @@ const about_text = [
         font-size: 1.1rem;
         margin-top: 20px;
         margin-bottom: 14px;
-        height: 39px;
         text-align: center;
       }
       p {

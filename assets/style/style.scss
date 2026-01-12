@@ -260,7 +260,7 @@ body::-webkit-scrollbar {
     }
   }
 
-  $menu_height: 134px;
+  $menu_height: 204px;
   .menu {
     position: relative;
     .menu-lists {
@@ -291,7 +291,7 @@ body::-webkit-scrollbar {
         text-align: center;
         font-family: "Signika", serif;
         font-size: 1.4rem;
-        height: calc(#{$menu_height} / 2);
+        height: calc(#{$menu_height} / 3);
         color: #222;
         padding: 10px 0;
         position: relative;
