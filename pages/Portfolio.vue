@@ -10,9 +10,14 @@ import rsz_cypd from "@/assets/img/rsz_cypd.png";
 <template>
   <div class="portfolio px-4">
     <section>
-      <h1 class="text-2xl font-bold mb-4">
+      <!-- <h1 class="text-2xl font-bold mb-4">
         {{ $t("portfolio_online_website") }}
+      </h1> -->
+      <h1 class="text-2xl font-bold mb-4">
+        {{ $t("portfolio_screen_capture") }}
       </h1>
+
+      <TipBox class="mb-6"> {{ $t("portfolio_product_warning") }} </TipBox>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
         <PortfolioItem
           :title="$t('portfolio_tycg_title')"
@@ -20,8 +25,8 @@ import rsz_cypd from "@/assets/img/rsz_cypd.png";
           :image-src="rsz_tycg"
           :image-alt="$t('portfolio_tycg_title')"
           :period="$t('portfolio_tycg_period')"
-          link="https://taotalk.tycg.gov.tw/"
         />
+        <!-- link="https://taotalk.tycg.gov.tw/" -->
 
         <PortfolioItem
           :title="$t('portfolio_crpd_title')"
@@ -29,13 +34,9 @@ import rsz_cypd from "@/assets/img/rsz_cypd.png";
           :image-src="rsz_cypd"
           :image-alt="$t('portfolio_crpd_title')"
           :period="$t('portfolio_crpd_period')"
-          link="https://crpd.sfaa.gov.tw/"
         />
+        <!-- link="https://crpd.sfaa.gov.tw/" -->
       </div>
-
-      <h1 class="text-2xl font-bold mb-4">
-        {{ $t("portfolio_screen_capture") }}
-      </h1>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
         <PortfolioItem
