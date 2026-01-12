@@ -1,7 +1,7 @@
 <template>
   <div class="service box-border shadower">
     <div class="icon">
-      <Icon :name="service.icon" size="52px" />
+      <Icon :name="service.icon" size="80px" />
     </div>
     <h5>{{ service.title }}</h5>
     <p>{{ service.text }}</p>

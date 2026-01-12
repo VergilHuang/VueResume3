@@ -9,18 +9,6 @@ const beActive = () => {
   if (isMenuOpened.value) {
     toggleMenu();
   }
-  // if on mobile device, include the smooth scroll-to function
-  if (isMobile()) {
-    const ele = document.getElementById("navigationBar");
-    if (ele) {
-      setTimeout(() => {
-        ele.scrollIntoView({
-          behavior: "auto",
-          block: "start",
-        });
-      }, 200);
-    }
-  }
 };
 
 const toggleMenu = () => {
@@ -55,7 +43,7 @@ const menuItems = [
 
 <template>
   <div>
-    <nav id="navigationBar" class="nav box-border shadower">
+    <nav id="navigationBar" class="nav box-border shadower min-h-0">
       <div id="nav" class="nav-container">
         <div class="nav-left">
           <NuxtLink class="home-btn" :to="$localePath('/about')">
@@ -108,7 +96,7 @@ const menuItems = [
           v-for="item in menuItems"
           :key="item.name"
           class="menu-item"
-          :to="$localePath(item.to)"
+          :to="{ path: $localePath(item.to), hash: '#navigationBar' }"
           @click="beActive"
         >
           {{ $t(item.name) }}
