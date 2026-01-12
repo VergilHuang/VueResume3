@@ -106,11 +106,23 @@ const tags = [
                 <ol class="resume-list">
                   <li>{{ $t("job_detail_1_1") }}</li>
                   <li>{{ $t("job_detail_1_2") }}</li>
-                  <li>{{ $t("job_detail_1_3") }}</li>
                   <li>{{ $t("job_detail_1_4") }}</li>
                   <li>{{ $t("job_detail_1_5") }}</li>
-                  <li>{{ $t("job_detail_1_6") }}</li>
-                  <li>{{ $t("job_detail_1_7") }}</li>
+                  <li>
+                    <DragonBox>
+                      {{ $t("job_detail_1_3") }}
+                    </DragonBox>
+                  </li>
+                  <li>
+                    <DragonBox>
+                      {{ $t("job_detail_1_6") }}
+                    </DragonBox>
+                  </li>
+                  <li>
+                    <DragonBox>
+                      {{ $t("job_detail_1_7") }}
+                    </DragonBox>
+                  </li>
                 </ol>
                 <Tag v-for="tag of tags[4]" :key="tag">{{ tag }}</Tag>
               </div>
@@ -129,9 +141,13 @@ const tags = [
                 <ol class="resume-list">
                   <li>{{ $t("job_detail_2_1") }}</li>
                   <li>{{ $t("job_detail_2_2") }}</li>
-                  <li>{{ $t("job_detail_2_3") }}</li>
                   <li>{{ $t("job_detail_2_4") }}</li>
                   <li>{{ $t("job_detail_2_5") }}</li>
+                  <li>
+                    <DragonBox>
+                      {{ $t("job_detail_2_3") }}
+                    </DragonBox>
+                  </li>
                 </ol>
                 <Tag v-for="tag of tags[3]" :key="tag">{{ tag }}</Tag>
               </div>
@@ -148,9 +164,17 @@ const tags = [
                 <ol class="resume-list">
                   <li>{{ $t("job_detail_3_1") }}</li>
                   <li>{{ $t("job_detail_3_2") }}</li>
-                  <li>{{ $t("job_detail_3_3") }}</li>
                   <li>{{ $t("job_detail_3_4") }}</li>
-                  <li>{{ $t("job_detail_3_5") }}</li>
+                  <li>
+                    <DragonBox>
+                      {{ $t("job_detail_3_3") }}
+                    </DragonBox>
+                  </li>
+                  <li>
+                    <DragonBox>
+                      {{ $t("job_detail_3_5") }}
+                    </DragonBox>
+                  </li>
                 </ol>
                 <Tag v-for="tag of tags[2]" :key="tag">{{ tag }}</Tag>
               </div>
@@ -166,12 +190,36 @@ const tags = [
               <div class="h-m">
                 <ol class="resume-list">
                   <li>{{ $t("job_detail_4_1") }}</li>
-                  <li>{{ $t("job_detail_4_2") }}</li>
-                  <li>{{ $t("job_detail_4_3") }}</li>
-                  <li>{{ $t("job_detail_4_4") }}</li>
-                  <li>{{ $t("job_detail_4_5") }}</li>
-                  <li>{{ $t("job_detail_4_6") }}</li>
-                  <li>{{ $t("job_detail_4_7") }}</li>
+                  <li>
+                    <DragonBox>
+                      {{ $t("job_detail_4_2") }}
+                    </DragonBox>
+                  </li>
+                  <li>
+                    <DragonBox>
+                      {{ $t("job_detail_4_3") }}
+                    </DragonBox>
+                  </li>
+                  <li>
+                    <DragonBox>
+                      {{ $t("job_detail_4_4") }}
+                    </DragonBox>
+                  </li>
+                  <li>
+                    <DragonBox>
+                      {{ $t("job_detail_4_5") }}
+                    </DragonBox>
+                  </li>
+                  <li>
+                    <DragonBox>
+                      {{ $t("job_detail_4_6") }}
+                    </DragonBox>
+                  </li>
+                  <li>
+                    <DragonBox>
+                      {{ $t("job_detail_4_7") }}
+                    </DragonBox>
+                  </li>
                 </ol>
                 <Tag v-for="tag of tags[1]" :key="tag">{{ tag }}</Tag>
               </div>
@@ -219,7 +267,14 @@ const tags = [
                       {{ $t("job_detail_5_sub_3") }}
                     </li>
                     <li>
-                      {{ $t("job_detail_5_sub_4") }}
+                      <DragonBox>
+                        {{ $t("job_detail_5_sub_5") }}
+                      </DragonBox>
+                    </li>
+                    <li>
+                      <DragonBox>
+                        {{ $t("job_detail_5_sub_4") }}
+                      </DragonBox>
                     </li>
                   </ol>
                 </div>

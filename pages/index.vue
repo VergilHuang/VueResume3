@@ -2,8 +2,8 @@
 definePageMeta({
   middleware: [
     function (to) {
-      if (to.name.includes("index") && to.name.includes("zh")) {
-        return navigateTo("/zh/about");
+      if (to.name.includes("index") && to.name.includes("zh-tw")) {
+        return navigateTo("/zh-tw/about");
       } else if (to.name.includes("index")) {
         return navigateTo("/about");
       } else {
