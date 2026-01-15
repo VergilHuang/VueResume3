@@ -1,6 +1,13 @@
 @import "tailwindcss";
 
-/* @import "@nuxt/ui"; */
-/* @layer theme, base, components, utilities;
-@import "tailwindcss/theme.css" layer(theme);
-@import "tailwindcss/utilities.css" layer(utilities); */
+@layer base {
+  html {
+    line-height: 1.5;
+    font-size: 14px;
+    font-family: "Noto Sans TC", "微軟正黑體", sans-serif;
+  }
+
+  a {
+    transition-duration: 0.2s;
+  }
+}
