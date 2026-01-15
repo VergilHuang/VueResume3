@@ -153,10 +153,6 @@ body::-webkit-scrollbar {
   flex: 1;
   min-width: 0;
 
-  .router-link-active {
-    color: $main_color !important;
-  }
-
   .dynamic-content {
     margin-top: $division;
     background: #fff;

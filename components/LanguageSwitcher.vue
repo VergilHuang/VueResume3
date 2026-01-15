@@ -1,10 +1,11 @@
 <script setup>
-import { ref } from "vue";
+import { ref, onMounted, onUnmounted } from "vue";
 import { useI18n } from "#imports";
 import FlagEN from "@/assets/svg/flag_en.svg";
 import FlagTW from "@/assets/svg/flag_zh-TW.svg";
 const { locale, locales, setLocale } = useI18n();
 const isOpen = ref(false);
+const languageSwitcherRef = ref(null);
 
 const currentLanguage = ref(
   locales.value.find((lang) => lang.code === locale.value)
@@ -19,10 +20,27 @@ const switchLanguage = (lang) => {
   currentLanguage.value = lang;
   isOpen.value = false;
 };
+
+const outsideClickEvent = (e) => {
+  if (
+    languageSwitcherRef.value &&
+    !languageSwitcherRef.value.contains(e.target)
+  ) {
+    isOpen.value = false;
+  }
+};
+
+onMounted(() => {
+  document.addEventListener("click", outsideClickEvent);
+});
+
+onUnmounted(() => {
+  document.removeEventListener("click", outsideClickEvent);
+});
 </script>
 
 <template>
-  <div class="relative inline-block">
+  <div ref="languageSwitcherRef" class="relative inline-block">
     <button
       class="flex items-center gap-2 border-none bg-transparent p-1.5 text-2xl transition-transform duration-200 hover:text-primary"
       @click="toggleDropdown"
@@ -32,7 +50,7 @@ const switchLanguage = (lang) => {
 
     <div
       v-show="isOpen"
-      class="absolute right-0 top-full z-[9999] min-w-[120px] rounded-lg bg-white py-2 shadow-lg"
+      class="absolute right-0 top-full z-[9999] min-w-[120px] rounded-lg bg-white py-2 shadow-md shadow-black/20"
     >
       <button
         v-for="lang in locales"

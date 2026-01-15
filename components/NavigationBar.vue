@@ -45,12 +45,12 @@ const menuItems = [
   <div>
     <nav
       id="navigationBar"
-      class="h-nav min-h-0 border border-solid border-gray-100 bg-white shadow-md"
+      class="min-h-0 border border-solid border-gray-100 bg-white shadow-md"
     >
-      <div class="flex items-center justify-between">
+      <div class="flex items-center h-nav justify-between pr-5">
         <div class="flex items-center gap-9 overflow-hidden rounded-lg">
           <NuxtLink
-            class="inline-block bg-primary px-5 py-4 font-serif font-medium text-white hover:bg-primary/80"
+            class="inline-flex items-center h-nav px-6 bg-primary font-medium text-white hover:bg-primary/80"
             :to="$localePath('/about')"
           >
             <Icon name="healthicons:home-alt" size="30px" />
