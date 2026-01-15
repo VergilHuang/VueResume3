@@ -22,91 +22,32 @@ const switchLanguage = (lang) => {
 </script>
 
 <template>
-  <div class="language-switcher">
-    <button class="language-button" @click="toggleDropdown">
+  <div class="relative inline-block">
+    <button
+      class="flex items-center gap-2 border-none bg-transparent p-1.5 text-2xl transition-transform duration-200 hover:text-primary"
+      @click="toggleDropdown"
+    >
       <Icon name="material-icon-theme:i18n" size="24px"></Icon>
-      <!-- <span class="name">{{ currentLanguage.name }}</span> -->
     </button>
 
-    <div v-show="isOpen" class="language-dropdown">
+    <div
+      v-show="isOpen"
+      class="absolute right-0 top-full z-[9999] min-w-[120px] rounded-lg bg-white py-2 shadow-lg"
+    >
       <button
         v-for="lang in locales"
         :key="lang.code"
-        class="language-option"
+        class="flex w-full cursor-pointer items-center gap-2 border-none bg-transparent px-4 py-2 transition-colors duration-200 hover:bg-gray-100"
         @click="switchLanguage(lang)"
       >
-        <span class="flag">
+        <span class="font-serif text-2xl font-light">
           <FlagTW v-if="lang.code === 'zh-tw'" filled></FlagTW>
           <FlagEN v-else filled></FlagEN>
         </span>
-        <span class="name">{{ lang.name }}</span>
+        <span class="relative -top-0.5 text-base leading-4">{{
+          lang.name
+        }}</span>
       </button>
     </div>
   </div>
 </template>
-
-<style lang="scss" scoped>
-$main_color: #5069c3;
-
-.language-switcher {
-  position: relative;
-  display: inline-block;
-}
-
-.language-button {
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 5px;
-  font-size: 1.5rem;
-  transition: transform 0.2s;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.language-button:hover {
-  color: $main_color;
-}
-
-.language-dropdown {
-  position: absolute;
-  z-index: 9999;
-  top: 100%;
-  right: 0;
-  background: white;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  padding: 8px 0;
-  min-width: 120px;
-}
-
-.language-option {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  width: 100%;
-  padding: 8px 16px;
-  border: none;
-  background: none;
-  cursor: pointer;
-  transition: background-color 0.2s;
-}
-
-.language-option:hover {
-  background-color: #f5f5f5;
-}
-
-.flag {
-  font-family: "Signika", serif;
-  font-size: 1.5rem;
-  font-weight: 300;
-}
-
-.name {
-  font-size: 1rem;
-  line-height: 1rem;
-  position: relative;
-  top: -2px;
-}
-</style>
