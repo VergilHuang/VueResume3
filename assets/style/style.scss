@@ -8,8 +8,18 @@ $person_width: 280px;
 $division: 32px;
 $main_color: #5069c3;
 
-body::-webkit-scrollbar {
-  display: none;
+::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: linear-gradient(to bottom, #7884eb 0%, #7884eb 30%, #5a68d3 100%);
+}
+
+::-webkit-scrollbar-track {
+  background: #eee6ff;
 }
 
 .flex-center {
@@ -25,8 +35,7 @@ body::-webkit-scrollbar {
 .shadower {
   box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.15);
 }
-
-.box-border {
+n .box-border {
   border: 1px solid #f8f8f8;
   border-radius: 8px;
 }
@@ -183,11 +192,6 @@ body::-webkit-scrollbar {
       }
     }
 
-    // .nav-1 {
-    //   display: flex;
-    //   gap: 20px;
-    // }
-
     .router-link {
       font-family: "Signika", serif;
       font-size: 1.2rem;
@@ -213,8 +217,8 @@ body::-webkit-scrollbar {
       justify-content: space-evenly;
       gap: 10px;
       .menu-btn {
-        padding-left: 20px;
-        padding-right: 26px;
+        padding-left: 12px;
+        padding-right: 6px;
         color: #555;
         border-left: 1px solid #eaeaea;
       }
@@ -224,7 +228,7 @@ body::-webkit-scrollbar {
         overflow: hidden;
         border-radius: 24px;
         vertical-align: top;
-        margin: 13px;
+        margin-right: 13px;
         background: $main_color;
         .hire-ract {
           display: flex;
@@ -234,6 +238,10 @@ body::-webkit-scrollbar {
           font-size: 1.18rem;
           padding: 8px 14px;
           color: #fff;
+
+          .hire-text {
+            white-space: nowrap;
+          }
 
           .fly-icon {
             margin-left: 8px;

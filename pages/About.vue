@@ -123,7 +123,6 @@ const about_text = [
   t("about_text_2"),
   t("about_text_3"),
   t("about_text_4"),
-  t("about_text_7"),
   t("about_text_5"),
   t("about_text_6"),
 ];
@@ -149,7 +148,7 @@ const about_text = [
     </section>
     <section>
       <h1>{{ $t("my_skills") }}</h1>
-      <SkillRadar :skills-data="skills_data" />
+      <SkillRadar v-if="!$device.isMobile" :skills-data="skills_data" />
       <div class="skill-box-container">
         <SkillBox
           v-for="skill_bd in skills_data"
@@ -176,8 +175,15 @@ const about_text = [
       background: #fff;
       padding: 25px 24px;
 
-      h5 {
+      .icon {
+        font-size: 4rem;
+        display: flex;
+        justify-content: center;
+        color: black;
+      }
+      span {
         font-family: "Signika", serif;
+        display: block;
         font-weight: 600;
         font-size: 1.1rem;
         margin-top: 20px;
@@ -187,12 +193,6 @@ const about_text = [
       p {
         font-size: 1rem;
         color: #555;
-      }
-      .icon {
-        font-size: 4rem;
-        display: flex;
-        justify-content: center;
-        color: black;
       }
     }
   }
@@ -248,6 +248,7 @@ const about_text = [
     }
   }
   .about-text {
+    font-family: "Inter", serif;
     font-size: 1.1rem;
     font-weight: 500;
     line-height: 1.5;
@@ -279,6 +280,22 @@ const about_text = [
         display: grid;
         grid-template-columns: repeat(1, 1fr);
         gap: 20px;
+      }
+      .service {
+        display: flex;
+
+        .icon {
+          display: flex;
+          justify-content: start;
+          align-items: center;
+          width: 33%;
+          flex: none;
+        }
+
+        span {
+          text-align: left;
+          margin-bottom: 10px;
+        }
       }
     }
   }

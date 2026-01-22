@@ -1,27 +1,31 @@
 <script setup lang="ts">
 import { ref, watch } from "#imports";
 
-const { viewportWidth, isMobile } = useViewportSize();
-const isMenuOpened = ref(false);
+const { viewportWidth } = useViewportSize();
 const menuRef = ref(null);
+const menuBtnRef = ref(null);
 
-const beActive = () => {
-  if (isMenuOpened.value) {
+const closeMenu = () => {
+  if (
+    menuRef.value &&
+    (menuRef.value as HTMLElement).classList.contains("menu-opened")
+  ) {
     toggleMenu();
   }
 };
 
+useClickOutside(closeMenu, [menuRef, menuBtnRef]);
+
 const toggleMenu = () => {
   if (import.meta.client && menuRef.value) {
     (menuRef.value as HTMLElement).classList.toggle("menu-opened");
-    isMenuOpened.value = !isMenuOpened.value;
   }
 };
 
 // 監聽視窗大小變化，當切換到桌面版時關閉選單
 watch(viewportWidth, () => {
-  if (!isMobile() && isMenuOpened.value) {
-    isMenuOpened.value = false;
+  if (viewportWidth.value >= 430) {
+    closeMenu();
   }
 });
 
@@ -55,7 +59,7 @@ const menuItems = [
               :key="item.name"
               class="router-link"
               :to="$localePath(item.to)"
-              @click="beActive"
+              @click="closeMenu"
             >
               {{ $t(item.name) }}
             </NuxtLink>
@@ -64,9 +68,10 @@ const menuItems = [
         <div class="nav-right">
           <LanguageSwitcher />
           <button
-            v-if="isMobile()"
+            v-if="viewportWidth <= 430"
+            ref="menuBtnRef"
             class="menu-btn"
-            @click.prevent="toggleMenu"
+            @click="toggleMenu"
           >
             <Icon name="charm:menu-hamburger" size="40px"></Icon>
           </button>
@@ -87,7 +92,7 @@ const menuItems = [
     </nav>
     <div class="menu">
       <div
-        v-if="isMobile()"
+        v-if="viewportWidth <= 430"
         id="menu-panel"
         ref="menuRef"
         class="menu-lists shadower"
@@ -97,7 +102,7 @@ const menuItems = [
           :key="item.name"
           class="menu-item"
           :to="{ path: $localePath(item.to), hash: '#navigationBar' }"
-          @click="beActive"
+          @click="closeMenu"
         >
           {{ $t(item.name) }}
         </NuxtLink>
