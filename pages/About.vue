@@ -123,7 +123,6 @@ const about_text = [
   t("about_text_2"),
   t("about_text_3"),
   t("about_text_4"),
-  t("about_text_7"),
   t("about_text_5"),
   t("about_text_6"),
 ];
