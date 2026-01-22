@@ -10,8 +10,6 @@ export const useViewportSize = () => {
     }
   };
 
-  const isMobile = () => viewportWidth.value <= 680;
-
   onMounted(() => {
     if (import.meta.client) {
       updateViewportSize();
@@ -34,6 +32,5 @@ export const useViewportSize = () => {
 
   return {
     viewportWidth,
-    isMobile,
   };
 };

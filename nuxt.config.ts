@@ -12,15 +12,8 @@ export default defineNuxtConfig({
   typescript: {
     typeCheck: true,
   },
-  modules: [
-    "@nuxt/eslint",
-    "@nuxt/fonts",
-    "@nuxt/icon",
-    // "@nuxt/ui",
-    "@nuxt/image",
-    "@nuxtjs/i18n",
-    "nuxt-svgo",
-  ],
+  modules: ["@nuxt/eslint", "@nuxt/fonts", "@nuxt/icon", // "@nuxt/ui",
+  "@nuxt/image", "@nuxtjs/i18n", "nuxt-svgo", "@nuxtjs/device"],
   css: ["~/assets/style/style.scss", "~/assets/style/main.css"],
 
   image: {},

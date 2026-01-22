@@ -1,14 +1,21 @@
 <script setup>
-import { ref } from "vue";
 import { useI18n } from "#imports";
 import FlagEN from "@/assets/svg/flag_en.svg";
 import FlagTW from "@/assets/svg/flag_zh-TW.svg";
 const { locale, locales, setLocale } = useI18n();
 const isOpen = ref(false);
+const containerRef = ref(null);
 
+// current lang setting.
 const currentLanguage = ref(
-  locales.value.find((lang) => lang.code === locale.value)
+  locales.value.find((lang) => lang.code === locale.value),
 );
+
+useClickOutside(onClickOutside, [containerRef]);
+
+function onClickOutside() {
+  isOpen.value = false;
+}
 
 const toggleDropdown = () => {
   isOpen.value = !isOpen.value;
@@ -22,7 +29,7 @@ const switchLanguage = (lang) => {
 </script>
 
 <template>
-  <div class="language-switcher">
+  <div ref="containerRef" class="language-switcher">
     <button class="language-button" @click="toggleDropdown">
       <Icon name="material-icon-theme:i18n" size="24px"></Icon>
       <!-- <span class="name">{{ currentLanguage.name }}</span> -->

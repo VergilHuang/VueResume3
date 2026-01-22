@@ -9,6 +9,7 @@ export default withNuxt(
       "vue/html-self-closing": "off",
       "vue/no-multiple-template-root": "off",
       "vue/multi-word-component-names": "off",
+      "@typescript-eslint/no-explicit-any": "off",
     },
-  }
+  },
 );

@@ -3,8 +3,10 @@
     <div class="icon">
       <Icon :name="service.icon" size="80px" />
     </div>
-    <h5>{{ service.title }}</h5>
-    <p>{{ service.text }}</p>
+    <div>
+      <span>{{ service.title }}</span>
+      <p>{{ service.text }}</p>
+    </div>
   </div>
 </template>
 
