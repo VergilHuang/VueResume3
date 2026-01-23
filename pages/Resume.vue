@@ -75,7 +75,6 @@ const tags = [
     "prettier",
     "Canva",
     "Cursor",
-    "Google Cloud Translate API",
     "OpenAI",
   ],
 ];

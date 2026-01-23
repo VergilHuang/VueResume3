@@ -10,7 +10,7 @@ $main_color: #5069c3;
 
 ::-webkit-scrollbar {
   -webkit-appearance: none;
-  width: 10px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -35,7 +35,7 @@ $main_color: #5069c3;
 .shadower {
   box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.15);
 }
-n .box-border {
+.box-border {
   border: 1px solid #f8f8f8;
   border-radius: 8px;
 }
@@ -70,7 +70,7 @@ n .box-border {
 .person-info {
   flex: none;
   width: $person_width;
-  height: 580px;
+  height: min-content;
   background: #fff;
   transform: translateZ(0px);
   position: sticky;
@@ -115,7 +115,7 @@ n .box-border {
       display: block;
       width: 0;
       height: 0;
-      border-width: 25px calc(#{$person_width} - 2px) 0 0;
+      border-width: 25px $person_width 0 0;
       border-style: solid;
       border-color: #fff transparent transparent;
       z-index: 1;
@@ -129,7 +129,7 @@ n .box-border {
       display: block;
       width: 0;
       height: 0;
-      border-width: 0 0 25px calc(#{$person_width} - 2px);
+      border-width: 0 0 25px $person_width;
       border-style: solid;
       border-color: transparent transparent #fff;
     }
@@ -167,8 +167,10 @@ n .box-border {
   .nav {
     height: $nav_height;
     background: #fff;
+    border-radius: 8px;
 
     .nav-container {
+      height: 100%;
       display: flex;
       justify-content: space-between;
       align-items: center;

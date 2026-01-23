@@ -48,9 +48,12 @@ const menuItems = [
 <template>
   <div>
     <nav id="navigationBar" class="nav box-border shadower min-h-0">
-      <div id="nav" class="nav-container">
+      <div class="nav-container">
         <div class="nav-left">
-          <NuxtLink class="home-btn" :to="$localePath('/about')">
+          <NuxtLink
+            class="home-btn"
+            :to="{ path: $localePath('/about'), hash: '#navigationBar' }"
+          >
             <Icon name="healthicons:home-alt" size="30px" />
           </NuxtLink>
           <template v-if="viewportWidth > 680">

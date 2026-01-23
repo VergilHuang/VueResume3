@@ -1,8 +1,9 @@
 <script setup lang="ts">
 import { useI18n } from "#imports";
+import Typed from "typed.js";
 
 const { t } = useI18n();
-
+const typeInst = ref();
 const services_data = [
   {
     id: 1,
@@ -126,15 +127,37 @@ const about_text = [
   t("about_text_5"),
   t("about_text_6"),
 ];
+
+onMounted(() => {
+  if (import.meta.client) {
+    typeInst.value = new Typed("#about-typed", {
+      strings: [
+        about_text.reduce(
+          (acc, cur) => `${acc}<p class="about-text">${cur}</p>`,
+          "",
+        ),
+      ],
+      typeSpeed: 0,
+      backSpeed: 0,
+      cursorChar: "",
+      loop: false,
+    });
+  }
+});
+
+// onUnmounted(() => {
+//   typeInst.value.destroy();
+// });
 </script>
 
 <template>
   <div class="about">
     <section>
       <h1>{{ $t("about_me") }}</h1>
-      <p v-for="(text, idx) in about_text" :key="idx" class="about-text">
+      <div id="about-typed"></div>
+      <!-- <p v-for="(text, idx) in about_text" :key="idx" class="about-text">
         {{ text }}
-      </p>
+      </p> -->
     </section>
     <section>
       <h1>{{ $t("my_service") }}</h1>
@@ -247,8 +270,13 @@ const about_text = [
       padding-top: 12px;
     }
   }
+
+  #about-typed {
+    min-height: 400px;
+  }
+
   .about-text {
-    font-family: "Inter", serif;
+    font-family: monospace, "Inter", serif;
     font-size: 1.1rem;
     font-weight: 500;
     line-height: 1.5;
