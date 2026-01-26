@@ -7,3 +7,17 @@ html {
 a {
   transition-duration: 0.2s;
 }
+
+::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: linear-gradient(to bottom, #7884eb 0%, #7884eb 30%, #5a68d3 100%);
+}
+
+::-webkit-scrollbar-track {
+  background: #eee6ff;
+}

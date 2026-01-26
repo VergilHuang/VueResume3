@@ -1,0 +1,215 @@
+@media print {
+  // Global resets for print
+  @page {
+    size: A4;
+    margin: 2cm;
+  }
+
+  * {
+    orphans: 2;
+    widows: 2;
+  }
+
+  body {
+    background: #fff !important;
+    color: #000 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  // Hide non-essential elements
+  .nav,
+  .bg-cover-amoeba,
+  .home-btn,
+  .menu-btn,
+  .hire-btn,
+  ::-webkit-scrollbar {
+    display: none !important;
+  }
+
+  .bg-cover {
+    background: white !important;
+  }
+
+  // Layout resets
+  #app {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: block !important; // Switch from flex row to vertical stack
+    gap: 0 !important;
+  }
+
+  // Sidebar (Person Info) adjustments
+  .person-info {
+    border: none !important;
+    width: 95% !important;
+    height: auto !important;
+    position: static !important; // Remove sticky positioning
+    box-shadow: none !important;
+    margin: 20px auto !important;
+    background: transparent !important;
+
+    // Optimize header layout for print to save vertical space
+    display: flex !important;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+
+    .intro-container {
+      display: flex;
+      gap: 20px;
+      flex-direction: row-reverse;
+      align-items: center;
+      justify-content: space-between;
+
+      .n-intro {
+        padding: 0 !important;
+        text-align: left;
+
+        .n-name {
+          font-size: 2.2rem !important; // Reduce giant font
+          margin: 0;
+        }
+        .n-subtitle {
+          position: block !important;
+          font-size: 1rem !important;
+        }
+        .text-shine {
+          appearance: none !important;
+        }
+      }
+
+      // Hide heavy photo decoration or resize it
+      .photo-container {
+        // display: none !important; // Usually photos waste ink/space, or we can make it small
+        &::after,
+        &::before {
+          display: none !important;
+        }
+
+        .vg-photo {
+          width: 80px !important;
+          height: 80px !important;
+          border-radius: 15px !important;
+          overflow: hidden !important;
+
+          object-fit: contain;
+          object-position: center;
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+
+    .vg-info-container {
+      padding: 0 !important;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+
+      .vg-info-box {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        .info-title {
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+
+  // Main Content adjustments
+  .content {
+    width: 95% !important;
+    padding: 0 !important;
+    margin: 0 auto !important;
+
+    .dynamic-content {
+      margin-top: 10px !important;
+      background: transparent !important;
+      box-shadow: none !important;
+
+      section {
+        padding: 0 !important;
+        background-color: white !important;
+
+        h1 {
+          page-break-after: avoid;
+          break-after: avoid;
+          font-size: 1.8rem !important;
+          border-bottom: 1px solid #ccc;
+          padding-bottom: 5px;
+          margin-bottom: 20px;
+          &::after {
+            display: none !important; // Remove decorative underline
+          }
+        }
+      }
+    }
+  }
+
+  // Timeline/Resume List adjustments
+  .history {
+    padding: 0 !important;
+
+    .tl-box {
+      width: 100% !important;
+      margin: 0 !important;
+
+      // Flatten the timeline style for better reading
+      .tl-icon {
+        display: none !important; // Hide timeline icons
+      }
+
+      .tl-title {
+        position: static !important;
+        margin-bottom: 15px;
+        color: #000;
+      }
+
+      div[id^="h-"] {
+        margin-left: 0 !important;
+        padding-left: 0 !important;
+        border-left: none !important;
+
+        &::before {
+          display: none !important; // Hide timeline dots
+        }
+      }
+
+      .h-w {
+        padding-bottom: 20px !important;
+        border-bottom: 1px dashed #ccc;
+        margin-bottom: 20px;
+        page-break-inside: avoid; // Try to keep job entries together
+
+        &:last-child {
+          border-bottom: none;
+        }
+
+        .h-c {
+          top: 0 !important;
+          left: 0 !important;
+          padding: 0 !important;
+
+          .h-t {
+            color: #000 !important;
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+
+            .h-d {
+              font-weight: bold;
+              color: #333 !important;
+            }
+          }
+        }
+      }
+    }
+  }
+}

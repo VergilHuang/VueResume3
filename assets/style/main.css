@@ -4,3 +4,15 @@
 /* @layer theme, base, components, utilities;
 @import "tailwindcss/theme.css" layer(theme);
 @import "tailwindcss/utilities.css" layer(utilities); */
+
+@theme {
+  --font-inter: "Inter", sans-serif;
+  --breakpoint-xs: 435px;
+}
+/* 
+@layer utilities {
+  .xs {
+    @apply @media (min-width: var(--breakpoint-xs)) {
+    }
+  }
+} */

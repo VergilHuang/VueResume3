@@ -75,7 +75,6 @@ const tags = [
     "prettier",
     "Canva",
     "Cursor",
-    "Google Cloud Translate API",
     "OpenAI",
   ],
 ];
@@ -83,7 +82,7 @@ const tags = [
 
 <template>
   <div class="resume">
-    <section>
+    <section class="resume-section">
       <h1>{{ $t("resume") }}</h1>
       <div class="history">
         <div class="tl-box">
@@ -296,10 +295,8 @@ $h_line_height: 23rem;
   padding: 40px 10px;
   .tl-box {
     position: relative;
-    width: 75%;
-    // height: 800px;
     display: inline-block;
-    margin: 0 3%;
+    margin: 0;
     vertical-align: top;
     .tl-title {
       font-family: "Signika", serif;
@@ -394,7 +391,7 @@ div[id^="h-"] {
     border: 2px solid #5069c3;
     position: relative;
     top: 99%;
-    left: -22px;
+    left: -20px;
     background: white;
     z-index: 1;
   }
@@ -403,14 +400,6 @@ div[id^="h-"] {
 #h-w0 {
   height: 5rem;
 }
-
-@media screen and (max-width: 1180px) {
-  .history {
-    .tl-box {
-      width: 90%;
-    }
-  }
-}
 @media screen and (max-width: 680px) {
   .history {
     padding: 40px 10px;
@@ -418,7 +407,6 @@ div[id^="h-"] {
       position: relative;
       width: 100%;
       display: block;
-      // padding-right: 40px;
       margin-bottom: 50px;
     }
   }

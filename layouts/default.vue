@@ -1,6 +1,4 @@
-<script setup>
-const route = useRoute();
-</script>
+<script setup></script>
 
 <template>
   <div class="bg-cover">
@@ -9,12 +7,8 @@ const route = useRoute();
       <PersonInfo />
       <div class="content">
         <NavigationBar />
-        <div id="nav" class="dynamic-content box-border shadower">
-          <Transition name="fade" mode="out-in">
-            <div :key="route.path">
-              <slot />
-            </div>
-          </Transition>
+        <div class="dynamic-content box-border shadower">
+          <slot />
         </div>
       </div>
       <LoadingIndicator />
