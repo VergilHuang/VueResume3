@@ -3,9 +3,9 @@ import tailwindcss from "@tailwindcss/vite";
 
 export default defineNuxtConfig({
   compatibilityDate: "2025-05-15",
-  ssr: true,
+  ssr: false,
   nitro: {
-    static: true,
+    static: false,
   },
   devServer: {
     port: 3800,
@@ -32,7 +32,13 @@ export default defineNuxtConfig({
     "nuxt-svgo",
     "@nuxtjs/device",
   ],
-  css: ["~/assets/style/style.scss", "~/assets/style/main.css"],
+  css: [
+    "~/assets/style/style.scss",
+    "~/assets/style/print.scss",
+    "~/assets/style/vue-transition.scss",
+    "~/assets/style/custom-animate.scss",
+    "~/assets/style/main.css",
+  ],
 
   image: {},
 

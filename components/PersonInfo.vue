@@ -8,7 +8,7 @@ const github = "https://github.com/VergilHuang";
 
 <template>
   <div class="person-info box-border shadower">
-    <div>
+    <div class="intro-container">
       <div class="n-intro">
         <h3 class="n-name">Vergil Huang</h3>
         <h4 class="n-subtitle text-shine">Senior Frontend Engineer</h4>

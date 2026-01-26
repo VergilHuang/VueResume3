@@ -22,12 +22,12 @@
     "@tailwindcss/vite": "^4.1.11",
     "animated-scroll-to": "^2.3.2",
     "animejs": "^4.0.2",
+    "clsx": "^2.1.1",
     "echarts": "^5.6.0",
     "eslint": "^9.28.0",
     "nuxt": "^3.17.4",
     "nuxt-svgo": "4.2.2",
     "tailwindcss": "^4.1.8",
-    "typed.js": "^2.1.0",
     "vue": "^3.5.16",
     "vue-router": "^4.5.1"
   },

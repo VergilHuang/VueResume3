@@ -1,26 +1,10 @@
 @import url("init.scss");
-@import url("vue-transition.scss");
-@import url("custom-animate.scss");
 
 $content_width: 1280px;
 $nav_height: 68px;
 $person_width: 280px;
 $division: 32px;
 $main_color: #5069c3;
-
-::-webkit-scrollbar {
-  -webkit-appearance: none;
-  width: 6px;
-}
-
-::-webkit-scrollbar-thumb {
-  border-radius: 10px;
-  background: linear-gradient(to bottom, #7884eb 0%, #7884eb 30%, #5a68d3 100%);
-}
-
-::-webkit-scrollbar-track {
-  background: #eee6ff;
-}
 
 .flex-center {
   display: flex;

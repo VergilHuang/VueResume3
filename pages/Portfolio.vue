@@ -10,9 +10,6 @@ import rsz_cypd from "@/assets/img/rsz_cypd.png";
 <template>
   <div class="portfolio px-4">
     <section>
-      <!-- <h1 class="text-2xl font-bold mb-4">
-        {{ $t("portfolio_online_website") }}
-      </h1> -->
       <h1 class="text-2xl font-bold mb-4">
         {{ $t("portfolio_screen_capture") }}
       </h1>
