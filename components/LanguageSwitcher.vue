@@ -1,5 +1,4 @@
 <script setup>
-import { useI18n } from "#imports";
 import FlagEN from "@/assets/svg/flag_en.svg";
 import FlagTW from "@/assets/svg/flag_zh-TW.svg";
 const { locale, locales, setLocale } = useI18n();

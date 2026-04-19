@@ -1,4 +1,3 @@
-import { ref, onMounted, onBeforeUnmount } from "#imports";
 
 export const useViewportSize = () => {
   const viewportWidth = ref(0);

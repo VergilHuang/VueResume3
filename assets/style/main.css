@@ -7,7 +7,20 @@
 
 @theme {
   --font-inter: "Inter", sans-serif;
+  --font-signika: "Signika", serif;
+  --font-tangerine: "Tangerine", serif;
+  --font-jura: "Jura", serif;
+  --font-noto: "Noto Sans TC", "微軟正黑體", sans-serif;
+
+  /* Theme Colors */
+  --color-main: #5069c3;
+
+  /* Breakpoints mapped from legacy SCSS variables */
   --breakpoint-xs: 435px;
+  --breakpoint-sm: 680px;
+  --breakpoint-md: 998px;
+  --breakpoint-lg: 1180px;
+  --breakpoint-xl: 1300px;
 }
 /* 
 @layer utilities {

@@ -4,6 +4,11 @@ import tailwindcss from "@tailwindcss/vite";
 export default defineNuxtConfig({
   compatibilityDate: "2025-05-15",
   ssr: false,
+  alias: {
+    // 您可以在此處增加自定義別名，例如：
+    // "@": ".",
+    // "~": "."
+  },
   nitro: {
     static: false,
   },

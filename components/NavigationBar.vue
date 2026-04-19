@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { ref, watch } from "#imports";
 
+const localePath = useLocalePath();
 const { viewportWidth } = useViewportSize();
 const menuRef = ref(null);
 const menuBtnRef = ref(null);
@@ -52,7 +52,7 @@ const menuItems = [
         <div class="nav-left">
           <NuxtLink
             class="home-btn"
-            :to="{ path: $localePath('/about'), hash: '#navigationBar' }"
+            :to="{ path: localePath('/about'), hash: '#navigationBar' }"
           >
             <Icon name="healthicons:home-alt" size="30px" />
           </NuxtLink>
@@ -61,7 +61,7 @@ const menuItems = [
               v-for="item in menuItems"
               :key="item.name"
               class="router-link"
-              :to="$localePath(item.to)"
+              :to="localePath(item.to)"
               @click="closeMenu"
             >
               {{ $t(item.name) }}
@@ -104,7 +104,7 @@ const menuItems = [
           v-for="item in menuItems"
           :key="item.name"
           class="menu-item"
-          :to="{ path: $localePath(item.to), hash: '#navigationBar' }"
+          :to="{ path: localePath(item.to), hash: '#navigationBar' }"
           @click="closeMenu"
         >
           {{ $t(item.name) }}
