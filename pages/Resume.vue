@@ -13,8 +13,6 @@ const tags = [
     "animateCSS",
     "a11y",
     "Git",
-    "Firebase",
-    "Flutter",
   ],
   [
     "React",
@@ -78,6 +76,8 @@ const tags = [
     "Canva",
     "Cursor",
     "OpenAI",
+    "Firebase",
+    "Flutter",
   ],
 ];
 </script>
@@ -119,11 +119,11 @@ const tags = [
                       {{ $t("job_detail_1_6") }}
                     </DragonBox>
                   </li>
-                  <li>
+                  <!-- <li>
                     <DragonBox>
                       {{ $t("job_detail_1_7") }}
                     </DragonBox>
-                  </li>
+                  </li> -->
                 </ol>
 
                 <Tag v-for="tag of tags[4]" :key="tag">{{ tag }}</Tag>
