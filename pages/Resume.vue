@@ -105,3 +105,28 @@ import { tagsData as tags } from "~/data/resume";
   </div>
 </template>
 
+<style lang="scss" scoped>
+@media print {
+  .resume-section {
+    padding: 0 !important;
+    background-color: white !important;
+
+    h1 {
+      page-break-after: avoid;
+      break-after: avoid;
+      font-size: 1.8rem !important;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 5px;
+      margin-bottom: 20px;
+      
+      &::after {
+        display: none !important;
+      }
+    }
+  }
+
+  :deep(.py-\[40px\]) {
+    padding: 0 !important;
+  }
+}
+</style>

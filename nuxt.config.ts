@@ -17,6 +17,10 @@ export default defineNuxtConfig({
   },
   devtools: {
     enabled: process.env.NODE_ENV !== "production",
+
+    timeline: {
+      enabled: true,
+    },
   },
   app: {
     keepalive: true,
@@ -38,8 +42,6 @@ export default defineNuxtConfig({
     "@nuxtjs/device",
   ],
   css: [
-    "~/assets/style/style.scss",
-    "~/assets/style/print.scss",
     "~/assets/style/vue-transition.scss",
     "~/assets/style/custom-animate.scss",
     "~/assets/style/main.css",

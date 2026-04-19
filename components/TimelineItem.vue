@@ -10,9 +10,9 @@ defineProps({
 
 <template>
   <div
-    class="ml-[26px] pl-[16px] pb-[40px] border-l-2 border-dashed border-[#d8d8d8] relative before:content-[''] before:block before:w-[7px] before:h-[7px] before:rounded-full before:border-2 before:border-main before:relative before:top-[99%] before:-left-[20px] before:bg-white before:z-10"
+    class="timeline-item ml-[26px] pl-[16px] pb-[40px] border-l-2 border-dashed border-[#d8d8d8] relative before:content-[''] before:block before:w-[7px] before:h-[7px] before:rounded-full before:border-2 before:border-main before:relative before:top-[99%] before:-left-[20px] before:bg-white before:z-10"
   >
-    <div class="relative -top-[18px] left-[10px] pr-[20px]">
+    <div class="timeline-content relative -top-[18px] left-[10px] pr-[20px]">
       <h5 class="font-noto font-medium text-[1.35rem] text-[#222]">
         {{ company }}
         <span
@@ -41,3 +41,43 @@ defineProps({
     </div>
   </div>
 </template>
+
+<style lang="scss" scoped>
+@media print {
+  .timeline-item {
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+    border-left: none !important;
+    padding-bottom: 20px !important;
+    border-bottom: 1px dashed #ccc;
+    margin-bottom: 20px;
+    page-break-inside: avoid;
+
+    &::before {
+      display: none !important;
+    }
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  .timeline-content {
+    top: 0 !important;
+    left: 0 !important;
+    padding: 0 !important;
+
+    h5 {
+      color: #000 !important;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      
+      span {
+        font-weight: bold;
+        color: #333 !important;
+      }
+    }
+  }
+}
+</style>
