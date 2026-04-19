@@ -5,6 +5,7 @@ import oh_game from "@/assets/img/oh-game.png";
 import oh_game_bo from "@/assets/img/oh-game-bo.png";
 import rsz_tycg from "@/assets/img/rsz_tycg.png";
 import rsz_cypd from "@/assets/img/rsz_cypd.png";
+import filter_effect_compute from "@/assets/img/filter-effect-compute.png";
 </script>
 
 <template>
@@ -22,8 +23,8 @@ import rsz_cypd from "@/assets/img/rsz_cypd.png";
           :image-src="rsz_tycg"
           :image-alt="$t('portfolio_tycg_title')"
           :period="$t('portfolio_tycg_period')"
+          link="https://taotalk.tycg.gov.tw/"
         />
-        <!-- link="https://taotalk.tycg.gov.tw/" -->
 
         <PortfolioItem
           :title="$t('portfolio_crpd_title')"
@@ -31,8 +32,18 @@ import rsz_cypd from "@/assets/img/rsz_cypd.png";
           :image-src="rsz_cypd"
           :image-alt="$t('portfolio_crpd_title')"
           :period="$t('portfolio_crpd_period')"
+          link="https://crpd.sfaa.gov.tw/"
         />
-        <!-- link="https://crpd.sfaa.gov.tw/" -->
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+        <PortfolioItem
+          :title="$t('portfolio_filter_effect_compute_title')"
+          :description="$t('portfolio_filter_effect_compute_description')"
+          :image-src="filter_effect_compute"
+          :image-alt="$t('portfolio_filter_effect_compute_title')"
+          link="https://filter-effect-compute.vercel.app/"
+        />
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">

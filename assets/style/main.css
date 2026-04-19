@@ -1,18 +1,89 @@
 @import "tailwindcss";
 
-/* @import "@nuxt/ui"; */
-/* @layer theme, base, components, utilities;
-@import "tailwindcss/theme.css" layer(theme);
-@import "tailwindcss/utilities.css" layer(utilities); */
-
 @theme {
   --font-inter: "Inter", sans-serif;
+  --font-signika: "Signika", serif;
+  --font-tangerine: "Tangerine", serif;
+  --font-jura: "Jura", serif;
+  --font-noto: "Noto Sans TC", "微軟正黑體", sans-serif;
+
+  /* Theme Colors */
+  --color-main: #5069c3;
+
+  /* Breakpoints mapped from legacy SCSS variables */
   --breakpoint-xs: 435px;
+  --breakpoint-sm: 680px;
+  --breakpoint-md: 998px;
+  --breakpoint-lg: 1180px;
+  --breakpoint-xl: 1300px;
 }
-/* 
-@layer utilities {
-  .xs {
-    @apply @media (min-width: var(--breakpoint-xs)) {
+
+@layer base {
+  html {
+    line-height: 1.5;
+    font-size: 14px;
+    font-family: var(--font-noto);
+  }
+
+  a {
+    transition-duration: 0.2s;
+  }
+
+  ::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: linear-gradient(to bottom, #7884eb 0%, #7884eb 30%, #5a68d3 100%);
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #eee6ff;
+  }
+
+  @media print {
+    @page {
+      size: A4;
+      margin: 2cm;
+    }
+
+    * {
+      orphans: 2;
+      widows: 2;
+    }
+
+    body {
+      background: #fff !important;
+      color: #000 !important;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    ::-webkit-scrollbar {
+      display: none !important;
     }
   }
-} */
+}
+
+@layer utilities {
+  .flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .main_color {
+    background: var(--color-main);
+  }
+
+  .shadower {
+    box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.15);
+  }
+
+  .box-border {
+    border: 1px solid #f8f8f8;
+    border-radius: 8px;
+  }
+}
